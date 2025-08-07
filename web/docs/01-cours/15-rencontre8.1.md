@@ -175,7 +175,7 @@ Voici un récapitulatif de tout ce qu'on peut faire avec `document.querySelector
 * Vérifier une classe : `.classList.contains("maClasse")`
 * Manipuler les attributs : `.attribut = "valeur"`
 
-N'oubliez pas que tout comme le **contenu textuel** et les **styles**, `currentTarget` peut être utiliser pour manipuler les **classes** et les **attributs** d'un élément HTML **avec lequel on vient de générer un événement** :
+N'oubliez pas que tout comme le **contenu textuel** et les **styles**, `currentTarget` peut être utilisé pour manipuler les **classes** et les **attributs** d'un élément HTML **avec lequel on vient de générer un événement** :
 
 * Ajouter une classe : `event.currentTarget.classList.add("maClasse")`
 * Retirer une classe : `event.currentTarget.classList.remove("maClasse")`
@@ -207,7 +207,7 @@ Ceci ne fonctionnera pas :
 let gElementMario = document.querySelector(".mario");
 ```
 
-✅ Cela dit, on peut y arriver si on **remplir la variable globale dans `init()`** :
+✅ Cela dit, on peut y arriver si on **remplit la variable globale dans `init()`** :
 
 ```js showLineNumbers
 // Vide initialement :

@@ -128,7 +128,7 @@ Remarquez que l'écouteur d'événements **n'est pas attaché à un élément HT
 
 ### 🔍 Déterminer la touche appuyée
 
-Pour déterminer quelle **touche** a été appuyée par l'utilisateur lors d'un **événement clavier**, il faudra utiliser `event.key` dans la **fonction appelé par l'événement**.
+Pour déterminer quelle **touche** a été appuyée par l'utilisateur lors d'un **événement clavier**, il faudra utiliser `event.key` dans la **fonction appelée par l'événement**.
 
 Exemple :
 
