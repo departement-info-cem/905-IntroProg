@@ -1,6 +1,6 @@
 ---
-title: Rencontre 13.1
-description: Cours Rencontre 13.1
+title: Cours 25 - Widgets Web
+description: Widgets Web
 ---
 
-# Rencontre 13.1
+# Cours 25 - Widgets Web

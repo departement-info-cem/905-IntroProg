@@ -116,48 +116,86 @@ Nous avons déjà abordé `Math.random()`, mais abordons des exemples un peu plu
 
 <center>![Fonctions mathématiques](../../static/img/cours24/random5.png)</center>
 
-## 📜 Commenter ses fonctions
+## 📢 Écouteurs d'événements avec paramètres
 
-Nous connaissons les **commentaires** (`// ... `) depuis la séance 4, mais nous ne les avons jamais rédigés nous-mêmes.
-
-Pendant le TP3, vous devrez créer vos propres fonctions et vous devrez les ... **commenter** !
+Pour le moment, nous n'étions pas capables de **passer des paramètres** à une fonction appelée par un écouteur d'événements.
 
 :::warning
 
-Lorsqu’on crée du code, c’est important de le commenter (le décrire) pour que nos collègues puissent comprendre et naviguer facilement notre travail.
+⛔ Ceci **ne fonctionne pas** :
+
+```js showLineNumbers
+function init(){
+
+    document.querySelector(".bouton1").addEventListener("click", changerCouleur("crimson"));
+
+}
+```
+
+✅ Nous sommes obligés d'écrire le nom de la fonction **sans paramètre ni parenthèses** dans un écouteur d'événements :
+
+```js showLineNumbers
+function init(){
+
+    document.querySelector(".bouton1").addEventListener("click", changerCouleur);
+
+}
+```
 
 :::
 
-**Lignes directrices :**
+Il existe toutefois un *stratagème* pour contourner cette contrainte :
 
-* Décrire brièvement l’**utilité** de la fonction. (⛔ Sans entrer dans des détails trop techniques)
-* Si la fonction reçoit des **paramètres**, que représentent-ils ?
-* Si la fonction **retourne** une **valeur**, que représente-t-elle ?
+```js
+document.querySelector(".bouton1").addEventListener("click", function(){ changerCouleur("crimson") });
+```
 
-### ✅ Bons exemples
+Remarquez qu'on a glissé l'appel de `changerCouleur("crimson")` dans un bloc `function(){ ... }`.
 
-<center>![Commentaire de fonction](../../static/img/cours24/comment1.png)</center>
+Il n'est pas nécessaire de comprendre à 100% ce stratagème (tant que vous êtes capables de l'utiliser !), mais en gros, `function() { ... }` est une **fonction anonyme** (une fonction qui n'a pas de nom et donc qui ne peut pas être réutilisée) et on peut mettre le bloc de code de notre choix à l'intérieur. (Dans ce cas-ci, un appel de fonction avec **paramètre(s)**)
 
-<center>![Commentaire de fonction](../../static/img/cours24/comment2.png)</center>
+Bref, dans ce cas-ci, **cliquer** sur l'élément `.bouton1` appelle une **fonction anonyme** qui appelle `changerCouleur("crimson")` 😵
 
-<center>![Commentaire de fonction](../../static/img/cours24/comment3.png)</center>
+### ✨ Exemple de simplification du code
 
-### ❌ Mauvais exemples
+Voici un exemple où ce *stratagème* est utilisé pour simplifier du code.
 
-Ci-dessous, les commentaires **décrivent TROP en détails les lignes de code** plutôt que de **résumer rapidement et clairement en français** les fonctions :
+Avant :
 
-<center>![Commentaire de fonction](../../static/img/cours24/comment4.png)</center>
+```js showLineNumbers
+function init(){
 
-<center>![Commentaire de fonction](../../static/img/cours24/comment5.png)</center>
+    document.querySelector(".bouton1").addEventListener("click", changerCouleurBleu);
+    document.querySelector(".bouton2").addEventListener("click", changerCouleurRouge);
 
-<hr/>
+}
 
-Ci-dessous, on oublie de parler des **paramètres** :
+function changerCouleurBleu(){
+    changerCouleur("blue");
+}
 
-<center>![Commentaire de fonction](../../static/img/cours24/comment6.png)</center>
+function changerCouleurRouge(){
+    changerCouleur("red");
+}
 
-<hr/>
+function changerCouleur(couleur){
+    document.querySelector(".texte").style.color = couleur;
+}
+```
 
-Ci-dessous, on oublie de parler de la **valeur retournée** :
+Remarquez que les fonctions `changerCouleurBleu()` et `changerCouleurRouge()` servent juste à faire le **pont** entre un écouteur d'événement et la fonction `changerCouleur()` pour passer un **paramètre**. Remédions-y.
 
-<center>![Commentaire de fonction](../../static/img/cours24/comment7.png)</center>
+Après :
+
+```js showLineNumbers
+function init(){
+
+    document.querySelector(".bouton1").addEventListener("click", function(){ changerCouleur("blue") });
+    document.querySelector(".bouton2").addEventListener("click", function(){ changerCouleur("red") });
+
+}
+
+function changerCouleur(couleur){
+    document.querySelector(".texte").style.color = couleur;
+}
+```
