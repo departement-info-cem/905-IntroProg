@@ -17,9 +17,9 @@ Léa est une plateforme accessible via Omnivox pour accéder aux notes de cours,
 
 ⚗ Démo pour accéder :
 
-• À Léa en général
-• À Mio (Il est important de lire ses Mios !)
-• Notes de cours, travaux et notes
+* À Léa en général
+* À Mio (Il est important de lire ses Mios !)
+* Notes de cours, travaux et notes
 
 ## 👥 Introduction à Teams
 
@@ -27,20 +27,20 @@ Teams est une plateforme plus conviviale pour communiquer avec ses enseignants. 
 
 ⚗ Démo générale :
 
-• Envoyer un message à un(e) enseignant(e)
-• Vérifier le calendrier (Dates de remises affichées si le devoir est transmis par Teams. On peut aussi ajouter nous-mêmes des notes dans le calendrier)
+* Envoyer un message à un(e) enseignant(e)
+* Vérifier le calendrier (Dates de remises affichées si le devoir est transmis par Teams. On peut aussi ajouter nous-mêmes des notes dans le calendrier)
 
 ⚗ Démo avec l'**équipe Teams** du cours :
 
-• Accéder aux notes de cours (Lien vers ce site)
-• Remises de travaux
+* Accéder aux notes de cours (Lien vers ce site)
+* Remises de travaux
 
 ## 📝 Test auto-diagnostic des habiletés en informatique
 
 🧪 Activité :
 
-• Réaliser le formulaire :
-• Vérifier ses résultats avec son enseignant(e).
+* Réaliser le formulaire :
+* Vérifier ses résultats avec son enseignant(e).
 
 ## 🌐 Introduction à Moodle
 
