@@ -11,15 +11,16 @@ Chaque étudiant(e) doit pouvoir se connecter aux ordinateurs en classe.
 
 Au besoin : [https://techno.cegepmontpetit.ca/compte-reseau/](https://techno.cegepmontpetit.ca/compte-reseau/)
 
-## 🏫 Introduction à Léa
+## 🏫 Introduction à Omnivox et Léa
 
 Léa est une plateforme accessible via Omnivox pour accéder aux notes de cours, aux travaux, aux Mios (messagerie) et aux remises de notes.
 
-⚗ Démo pour accéder :
+⚗ Démo :
 
-* À Léa en général
 * À Mio (Il est important de lire ses Mios !)
-* Notes de cours, travaux et notes
+* Léa : Notes de cours, travaux et remises de notes
+
+<center>![Cours sur Léa](../../static/img/atelier/leaEtudiant.png)</center>
 
 ## 👥 Introduction à Teams
 
@@ -39,8 +40,8 @@ Teams est une plateforme plus conviviale pour communiquer avec ses enseignants. 
 
 🧪 Activité :
 
-* Réaliser le formulaire :
-* Vérifier ses résultats avec son enseignant(e).
+* Réaliser le formulaire : [https://forms.office.com/r/92xP7ewtYM](https://forms.office.com/r/92xP7ewtYM)
+* Vérifier ses résultats avec son enseignant(e) au besoin.
 
 ## 🌐 Introduction à Moodle
 
