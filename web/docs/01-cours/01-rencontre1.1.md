@@ -17,7 +17,8 @@ Léa est une plateforme accessible via Omnivox pour accéder aux notes de cours,
 
 ⚗ Démo :
 
-* À Mio (Il est important de lire ses Mios !)
+* Calendrier scolaire (lien vers le calendrier) et Événements (ex : date de désinscription et d'abandon)
+* Mio (Il est important de lire ses Mios !)
 * Léa : Notes de cours, travaux et remises de notes
 
 <center>![Cours sur Léa](../../static/img/atelier/leaEtudiant.png)</center>
@@ -52,11 +53,14 @@ Moodle est une plateforme utilisée par certain(s) enseignant(e)s pour administr
 * S'assurer que tous arrivent à se connecter. (Au besoin : [https://techno.cegepmontpetit.ca/compte-moodle/](https://techno.cegepmontpetit.ca/compte-moodle/))
 * Brève visite de la page de la formation en informatique. (Accès aux vidéos et aux exercices)
 
-## 🐈 Introduction à GitHub Classrooms
+## 🧭 Introduction à Google Classrooms
 
-Démo avec un GitHub Classroom factice :
+🧪 Activité :
 
-* S'assurer que les étudiant(e)s aient un compte GitHub pour se connecter.
+* Créer un compte Google. (D'apparence professionnelle !)
+
+⚗ Démo : 
+* Accéder à des notes de cours.
 * Accéder à un travail.
 
 ## 📂 Introduction à OneDrive
