@@ -37,22 +37,6 @@ Teams est une plateforme plus conviviale pour communiquer avec ses enseignants. 
 * Accéder aux notes de cours (Lien vers ce site)
 * Remises de travaux
 
-## 📝 Test auto-diagnostic des habiletés en informatique
-
-🧪 Activité :
-
-* Réaliser le formulaire : [https://forms.office.com/r/92xP7ewtYM](https://forms.office.com/r/92xP7ewtYM)
-* Vérifier ses résultats avec son enseignant(e) au besoin.
-
-## 🌐 Introduction à Moodle
-
-Moodle est une plateforme utilisée par certain(s) enseignant(e)s pour administrer un cours. (À la place de Léa et / ou de Teams)
-
-⚗ Démo avec le Moodle de la formation en informatique :
-
-* S'assurer que tous arrivent à se connecter. (Au besoin : [https://techno.cegepmontpetit.ca/compte-moodle/](https://techno.cegepmontpetit.ca/compte-moodle/))
-* Brève visite de la page de la formation en informatique. (Accès aux vidéos et aux exercices)
-
 ## 🧭 Introduction à Google Classrooms
 
 🧪 Activité :
@@ -75,3 +59,19 @@ Moodle est une plateforme utilisée par certain(s) enseignant(e)s pour administr
 
 * Créer un dossier pour la session A25
 * Créer un dossier pour chacun de ses cours de la session
+
+## 📝 Test auto-diagnostic des habiletés en informatique
+
+🧪 Activité :
+
+* Réaliser le formulaire : [https://forms.office.com/r/92xP7ewtYM](https://forms.office.com/r/92xP7ewtYM)
+* Vérifier ses résultats avec son enseignant(e) au besoin.
+
+## 🌐 Introduction à Moodle
+
+Moodle est une plateforme utilisée par certain(s) enseignant(e)s pour administrer un cours. (À la place de Léa et / ou de Teams)
+
+⚗ Démo avec le Moodle de la formation en informatique :
+
+* S'assurer que tous arrivent à se connecter. (Au besoin : [https://techno.cegepmontpetit.ca/compte-moodle/](https://techno.cegepmontpetit.ca/compte-moodle/))
+* Brève visite de la page de la formation en informatique. (Accès aux vidéos et aux exercices)
