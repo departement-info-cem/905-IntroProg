@@ -43,10 +43,6 @@ Teams est une plateforme plus conviviale pour communiquer avec ses enseignants. 
 ⚗ Démo générale :
 
 * Envoyer un message à un(e) enseignant(e) (À prioriser plutôt que les Mios !)
-* Vérifier le calendrier (Dates de remises affichées si le devoir est transmis par Teams. On peut aussi ajouter nous-mêmes des notes dans le calendrier)
-
-⚗ Démo avec l'**équipe Teams** du cours :
-
 * Accéder aux notes de cours (Lien vers ce site)
 * Remises de travaux
 
