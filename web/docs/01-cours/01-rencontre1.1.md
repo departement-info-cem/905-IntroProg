@@ -17,7 +17,7 @@ Chaque étudiant(e) doit pouvoir se connecter aux ordinateurs en classe.
 * ⚖ L'enseignant(e) forme les équipes rapidement, au pif
 * ✨ Dans la vie, il faut apprendre à faire semblant d'aimer collaborer avec nos collègues
 * 🚔 Illégal d'être avec une personne qu'on connait déjà (le but est que tout le monde soit mal à l'aise !)
-* 📝 Vous apprendez à connaître votre partenaire de manière inquiétante au travers les exercices qui suivent
+* 📝 Vous apprendrez à connaître votre partenaire de manière douteuse au travers les exercices qui suivent
 
 ## 🏫 Introduction à Omnivox et Léa
 
