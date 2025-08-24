@@ -59,8 +59,8 @@ Teams est une plateforme plus conviviale pour communiquer avec ses enseignants. 
 
 🧪 Activité :
 
-(Il faut utiliser son compte Google institutionnel)
-
+* Si vous n'avez pas de compte Google professionnel, en créer un. (ex : yolande.robidoux@gmail.com)
+* Se connecter à son compte Google professionnel.
 * Joindre un cours à l'aide de son code
 * Récupérer des notes de cours
 * Récupérer, compléter, puis remettre un travail
@@ -79,8 +79,6 @@ Mise en garde : les fichiers enregistrées sur un ordinateur au Cégep sont perd
 * Création de sous-dossiers
 
 🧪 Activité :
-
-(Il faut utiliser son compte Google institutionnel)
 
 * Créer un dossier pour la session A25
 * Créer un dossier pour chacun de ses cours de la session
