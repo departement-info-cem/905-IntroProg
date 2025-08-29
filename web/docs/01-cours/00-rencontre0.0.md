@@ -67,3 +67,30 @@ let prixTotal = 1.99 * 3;
         <td>La valeur de `maVariable` est **réduite** de 2</td>
     </tr>
 </table>
+
+### Littéraux de gabarit (template strings)
+
+```js
+let nom = "Judith";
+let objet = "chaises";
+let phrase1 = `Je suis ${nom} et j'aime les ${objet}`;
+// phrase1 contient "Je suis Judith et j'aime les chaises"
+
+let article = "rhododendron";
+let qte = 3;
+let prix = 3.99;
+let phrase2 = `${qte} ${article} coûtent ${qte * prix} dollars.`;
+// phrase2 contient "3 rhododendron coûtent 11.97 dollars."
+```
+
+### DOM
+
+Accéder au contenu textuel d’un élément (et le ranger dans une variable, par exemple)
+```js
+let texte = document.querySelector(".classe").textContent;
+```
+
+Modifier le contenu textuel d’un élément (Avec `=` on remplace, avec `+=` on ajoute)
+```js
+document.querySelector(".classe").textContent = "Nouveau texte";
+```
