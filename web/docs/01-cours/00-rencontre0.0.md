@@ -83,6 +83,26 @@ let phrase2 = `${qte} ${article} coûtent ${qte * prix} dollars.`;
 // phrase2 contient "3 rhododendron coûtent 11.97 dollars."
 ```
 
+### Fonctions
+
+```js showLineNumbers
+function nomDeLaFonction(){
+
+    // Code de la fonction
+
+}
+```
+
+### Fonctions préexistantes
+
+```js
+// Crée une alerte (un pop-up) dans la page
+alert("Skbidi");
+
+// Affiche un message dans la console du navigateur
+console.log("Natacha n'attache pas ses chats");
+```
+
 ### DOM
 
 Accéder au contenu textuel d’un élément (et le ranger dans une variable, par exemple)
