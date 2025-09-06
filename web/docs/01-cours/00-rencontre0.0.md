@@ -105,12 +105,40 @@ console.log("Natacha n'attache pas ses chats");
 
 ### DOM
 
-Accéder au contenu textuel d’un élément (et le ranger dans une variable, par exemple)
+🔍 Accéder au contenu textuel d’un élément (et le ranger dans une variable, par exemple)
 ```js
 let texte = document.querySelector(".classe").textContent;
 ```
 
-Modifier le contenu textuel d’un élément (Avec `=` on remplace, avec `+=` on ajoute)
+📝 Modifier le contenu textuel d’un élément (Avec `=` on remplace, avec `+=` on ajoute)
 ```js
 document.querySelector(".classe").textContent = "Nouveau texte";
 ```
+
+👂 Ajouter un écouteur d'événements pour un élément spécifique (Généralement dans `init()`) Les types d'événements utilisés dans ce cours sont `"click"`, `"mouseover"` et `"mouseout"`.
+```js
+document.querySelector(".classe").addEventListener("type", nomFonction);
+```
+
+🎨 Modifier le style d’un élément
+```js
+document.querySelector(".classe").style.propriété = "valeur";
+```
+
+<table>
+<tr>
+    <td>Propriété</td>
+    <td>`color`, `backgroundColor`,<br/> `borderColor`</td>
+    <td>`borderWidth`, `height`,<br/>`width`, `left`, `right`</td>
+    <td><center>`display`</center></td>
+    <td>`opacity`</td>
+</tr>
+<tr>
+    <td>Exemple(s) de valeur</td>
+    <td><center>`"red"`, `"#696969"`</center></td>
+    <td><center>`"15px"`</center></td>
+    <td><center>`"none"`, `"block"`</center></td>
+    <td>`0.5`, `1`</td>
+
+</tr>
+</table>
