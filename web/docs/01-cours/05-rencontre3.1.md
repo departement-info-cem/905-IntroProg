@@ -183,11 +183,12 @@ Exemple :
 
 <center>![Modification de style](../../static/img/cours5/backgroundColor.png)</center>
 
-### 🔳 Couleur et largeur de bordure
+### 🔳 Style, couleur et largeur de bordure
 
 Syntaxe :
 
 ```js
+document.querySelector(".classe").style.borderStyle = "nomDuStyle";
 document.querySelector(".classe").style.borderColor = "nomDeLaCouleur";
 document.querySelector(".classe").style.borderWidth = "NOMBREpx";
 ```
@@ -195,6 +196,8 @@ document.querySelector(".classe").style.borderWidth = "NOMBREpx";
 Exemple :
 
 <center>![Modification de style](../../static/img/cours5/border.png)</center>
+
+Le style peut prendre les valeurs `"none"` (pas de bordure, souvent le défaut), `"solid"` (bordure pleine) et bien d'autres (voir [**ici**](https://www.w3schools.com/cssref/pr_border-style.php)) 
 
 ⛔ `px` est l'unité, ici la bordure fera 20 **pixels**. Si vous oubliez l'unité, la valeur de l'attribut ne sera pas changée.
 
