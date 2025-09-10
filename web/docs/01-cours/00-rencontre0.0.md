@@ -103,6 +103,69 @@ alert("Skbidi");
 console.log("Natacha n'attache pas ses chats");
 ```
 
+### Opérateurs de comparaison
+
+<table>
+    <tr>
+        <th>Opérateur</th>
+        <th>Exemple</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td><center>`==`</center></td>
+        <td>`5 == 7`</td>
+        <td>`5` est-il **égal** (identique) à `7` ?</td>
+    </tr>
+    <tr>
+        <td><center>`!=`</center></td>
+        <td>`2 != 3`</td>
+        <td>`2` est-il **différent** (pas égal) à `3` ?</td>
+    </tr>
+    <tr>
+        <td><center>`<`</center></td>
+        <td>`3 < 2`</td>
+        <td>`3` est-il **plus petit** que `2` ?</td>
+    </tr>
+    <tr>
+        <td><center>`>`</center></td>
+        <td>`4 > 2`</td>
+        <td>`4` est-il **plus grand** que `2` ?</td>
+    </tr>
+    <tr>
+        <td><center>`<=`</center></td>
+        <td>`5 <= 5`</td>
+        <td>`5` est-il **plus petit ou égal** à `5` ?</td>
+    </tr>
+    <tr>
+        <td><center>`>=`</center></td>
+        <td>`9 >= 3`</td>
+        <td>`9` est-il **plus grand ou égal** à `3` ?</td>
+    </tr>
+</table>
+
+### Conditions
+
+```js showLineNumbers
+if( ... condition ... ){
+
+    // Code à exécuter si la condition est true
+
+}
+```
+
+```js showLineNumbers
+if( ... condition ... ){
+
+    // Code à exécuter si la condition est true
+
+}
+else{
+
+    // Code à exécuter si la condition est false
+
+}
+```
+
 ### DOM
 
 🔍 Accéder au contenu textuel d’un élément (et le ranger dans une variable, par exemple)
