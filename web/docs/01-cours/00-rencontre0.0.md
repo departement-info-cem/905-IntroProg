@@ -143,6 +143,26 @@ console.log("Natacha n'attache pas ses chats");
     </tr>
 </table>
 
+### Opérateurs logiques
+
+<table>
+    <tr>
+        <th>Opérateur</th>
+        <th>Exemple</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td><center>`&&`</center></td>
+        <td>`a > 3 && b > 4`</td>
+        <td>`a` est plus grand que `3` ET `b` est plus grand que `4` ?</td>
+    </tr>
+    <tr>
+        <td><center>`||`</center></td>
+        <td>`a != b || a < 10`</td>
+        <td>`a` est différent de `b` OU `a` est plus petit que `10` ?</td>
+    </tr>
+</table>
+
 ### Conditions
 
 ```js showLineNumbers
@@ -162,6 +182,24 @@ if( ... condition ... ){
 else{
 
     // Code à exécuter si la condition est false
+
+}
+```
+
+```js showLineNumbers
+if( ... condition 1 ... ){
+
+    // Code à exécuter si la condition 1 est true
+
+}
+else if( ... condition 2 ...){
+
+    // Code à exécuter si la condition 1 est false, mais la condition 2 est true
+
+}
+else{
+
+    // Code à exécuter si toutes les conditions sont false
 
 }
 ```
