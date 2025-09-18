@@ -1,6 +1,6 @@
 ---
 title: Cours 24 - Texte et maths
-description: Fonctions pour les chaînes de caractères, fonctions mathématiques et commenter ses fonctions
+description: Fonctions pour les chaînes de caractères et fonctions mathématiques
 ---
 
 # Cours 24 - Texte et maths

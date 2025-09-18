@@ -1,6 +1,6 @@
 ---
 title: Cours 26 - Commentaires
-description: Commenter ses fonctions, astuces de simplification et résolution de problèmes.
+description: Commenter ses fonctions et apprendre d'autres langages
 ---
 
 # Cours 26 - Commentaires
@@ -50,3 +50,16 @@ Ci-dessous, on oublie de parler des **paramètres** :
 Ci-dessous, on oublie de parler de la **valeur retournée** :
 
 <center>![Commentaire de fonction](../../static/img/cours24/comment7.png)</center>
+
+## 📚 Apprendre d'autres langages
+
+Bien que nous ayons appris beaucoup de notions en **JavaScript**, nous n’avons vu **que les bases** ! 👶 Si vous explorez d’autres langages, vous rencontrerez plusieurs nouvelles notions qui ne vous seront pas familières.
+
+Malgré tout, n’ayez pas peur d’apprendre d’autres langages dès maintenant !
+* Il faut apprendre le langage **C++** pour exploiter **Unreal Engine** en profondeur.
+* Il faut apprendre **Kotlin**, **Java** ou autre pour faire des applications Android.
+* Il faut apprendre **C#**, **Java**, **Python**, **PHP** ou autre pour faire un serveur Web à partir de zéro.
+* Il faut apprendre **SQL** pour exploiter les bases de données relationnelles soi-même.
+* etc !
+
+Selon les types de projets qui vous intéressent, il y a beaucoup à apprendre. Dans l'univers TIM, vous n'aurez cela dit pas besoin d'apprendre beaucoup de langages de programmation 🥳
