@@ -93,6 +93,19 @@ function nomDeLaFonction(){
 }
 ```
 
+### Fonctions avec paramètres
+
+```js showLineNumbers
+function couleurFond(classe, couleur){
+
+    document.querySelector(classe).style.backgroundColor = couleur;
+
+}
+
+// Ex : cet appel rend le fond de l'élément .texte rouge
+couleurFond(".texte", "red");
+```
+
 ### Fonctions préexistantes
 
 ```js
