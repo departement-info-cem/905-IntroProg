@@ -106,6 +106,24 @@ function couleurFond(classe, couleur){
 couleurFond(".texte", "red");
 ```
 
+### Fonctions avec retour
+
+```js showLineNumbers
+function valeursEgales(nombre1, nombre2){
+
+    if(nombre1 == nombre2){
+        return true;
+    }
+    else{
+        return false;
+    }
+
+}
+
+// Ex : la variable x contiendra false
+let x = valeursEgales(2, 4);
+```
+
 ### Fonctions préexistantes
 
 ```js
