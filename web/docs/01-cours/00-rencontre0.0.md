@@ -5,7 +5,7 @@ description: Résumé de toutes les notions abordées dans ce cours
 
 # 💡 Aide-mémoire
 
-### Opérateurs arithmétiques
+### 🧮 Opérateurs arithmétiques
 
 <table>
     <tr>
@@ -35,7 +35,7 @@ description: Résumé de toutes les notions abordées dans ce cours
     </tr>
 </table>
 
-### Déclaration de variables
+### 📝 Déclaration de variables
 
 ```js
 let animal;
@@ -43,7 +43,7 @@ let nom = "Jean-Jérémie";
 let prixTotal = 1.99 * 3;
 ```
 
-### Opérateurs d'affectation
+### 📈📉 Opérateurs d'affectation
 
 <table>
     <tr>
@@ -68,7 +68,7 @@ let prixTotal = 1.99 * 3;
     </tr>
 </table>
 
-### Littéraux de gabarit (template strings)
+### ✒️ Littéraux de gabarit (template strings)
 
 ```js
 let nom = "Judith";
@@ -83,7 +83,7 @@ let phrase2 = `${qte} ${article} coûtent ${qte * prix} dollars.`;
 // phrase2 contient "3 rhododendron coûtent 11.97 dollars."
 ```
 
-### Fonctions
+### ⚙️ Fonctions
 
 ```js showLineNumbers
 function nomDeLaFonction(){
@@ -93,7 +93,7 @@ function nomDeLaFonction(){
 }
 ```
 
-### Fonctions avec paramètres
+### ⚙️🎨 Fonctions avec paramètres
 
 ```js showLineNumbers
 function couleurFond(classe, couleur){
@@ -106,7 +106,7 @@ function couleurFond(classe, couleur){
 couleurFond(".texte", "red");
 ```
 
-### Fonctions avec retour
+### ⚙️📫 Fonctions avec retour
 
 ```js showLineNumbers
 function valeursEgales(nombre1, nombre2){
@@ -124,7 +124,7 @@ function valeursEgales(nombre1, nombre2){
 let x = valeursEgales(2, 4);
 ```
 
-### Fonctions préexistantes
+### ⚙️✅ Fonctions préexistantes
 
 ```js
 // Crée une alerte (un pop-up) dans la page
@@ -134,7 +134,7 @@ alert("Skbidi");
 console.log("Natacha n'attache pas ses chats");
 ```
 
-### Opérateurs de comparaison
+### ⚖️ Opérateurs de comparaison
 
 <table>
     <tr>
@@ -174,7 +174,7 @@ console.log("Natacha n'attache pas ses chats");
     </tr>
 </table>
 
-### Opérateurs logiques
+### ⚖️⚖️ Opérateurs logiques
 
 <table>
     <tr>
@@ -194,7 +194,7 @@ console.log("Natacha n'attache pas ses chats");
     </tr>
 </table>
 
-### Conditions
+### ❓ Conditions
 
 ```js showLineNumbers
 if( ... condition ... ){
@@ -235,7 +235,7 @@ else{
 }
 ```
 
-### DOM
+### 💻 DOM
 
 🔍 Accéder au contenu textuel d’un élément (et le ranger dans une variable, par exemple)
 ```js
@@ -274,3 +274,20 @@ document.querySelector(".classe").style.propriété = "valeur";
 
 </tr>
 </table>
+
+### 🦑 currentTarget
+
+```js showLineNumbers
+function init(){
+
+    document.querySelector(".bouton1").addEventListener("click", changerCouleur);
+
+}
+
+function changerCouleur(event){
+
+    event.currentTarget.style.color = "red"; // Affectera l'élément .bouton1
+
+}
+```
+
