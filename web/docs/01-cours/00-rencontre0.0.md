@@ -252,6 +252,25 @@ document.querySelector(".classe").textContent = "Nouveau texte";
 document.querySelector(".classe").addEventListener("type", nomFonction);
 ```
 
+💄 Manipuler les classes
+```js
+document.querySelector(".classe").classList.add("maClasse"); // Ajouter
+document.querySelector(".classe").classList.remove("maClasse"); // Retirer
+document.querySelector(".classe").classList.toggle("maClasse"); // Basculer
+
+// Vérifier si un élément possède une classe (x contiendra true ou false)
+let x = document.querySelector(".classe").classList.contains("maClasse");
+```
+
+🧪 Manipuler les attributs
+```js
+document.querySelector(".classe").nomAttribut = "valeur"; // Ajouter ou modifier
+document.querySelector(".classe").nomAttribut = ""; // Retirer
+
+// Obtenir la valeur d'un attribut
+let x = document.querySelector(".classe").nomAttribut;
+```
+
 🎨 Modifier le style d’un élément
 ```js
 document.querySelector(".classe").style.propriété = "valeur";
