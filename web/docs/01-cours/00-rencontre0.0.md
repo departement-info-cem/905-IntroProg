@@ -235,6 +235,24 @@ else{
 }
 ```
 
+### ➰ Boucles
+
+```js showLineNumbers
+while( ... condition ... ){
+
+    // Coder à exécuter plusieurs fois
+
+}
+```
+
+```js showLineNumbers
+do{
+
+    // Coder à exécuter plusieurs fois
+
+}while( ... condition ... );
+```
+
 ### 💻 DOM
 
 🔍 Accéder au contenu textuel d’un élément (et le ranger dans une variable, par exemple)
