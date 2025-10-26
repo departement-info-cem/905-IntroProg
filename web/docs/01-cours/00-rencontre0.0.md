@@ -253,6 +253,55 @@ do{
 }while( ... condition ... );
 ```
 
+### 🎰 Tableaux
+
+🥚 Créer un tableau
+```js
+let monTableau = [valeur, valeur, valeur, ...];
+```
+
+🤏 Obtenir une donnée d'un tableau
+```js
+monTableau[index] // index est un nombre situé entre 0 et monTableau.length - 1
+```
+
+✏ Modifier une donnée d'un tableau
+```js
+monTableau[index] = nouvelleValeur;
+```
+
+📏 Obtenir la taille d'un tableau
+```js
+monTableau.length
+```
+
+📬 Ajouter une donnée à la fin d'un tableau
+```js
+monTableau.push(nouvelleValeur);
+```
+
+❌ Retirer la dernière donnée d'un tableau
+```js
+monTableau.pop();
+```
+
+✂ Retirer une ou plusieurs données n'importe où dans un tableau
+```js
+monTableau.splice(index, nb_à_retirer);
+```
+
+➰ Voici un modèle de boucle pour parcourir un tableau
+```js
+let i = 0;
+
+while(i < monTableau.length){
+
+    // ... Faire quelque chose avec monTableau[i] ...
+    i += 1;
+
+}
+```
+
 ### 💻 DOM
 
 🔍 Accéder au contenu textuel d’un élément (et le ranger dans une variable, par exemple)
