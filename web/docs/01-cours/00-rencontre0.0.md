@@ -319,6 +319,19 @@ document.querySelector(".classe").textContent = "Nouveau texte";
 document.querySelector(".classe").addEventListener("type", nomFonction);
 ```
 
+🎹 Créer un écouteur d'événements clavier
+```js
+function init(){
+    document.addEventListener("keydown", nomFonction);
+}
+
+function nomFonction(event){
+
+    let touche = event.key; // touche contient la touche appuyée (Ex : "ArrowUp")
+
+}
+```
+
 💄 Manipuler les classes
 ```js
 document.querySelector(".classe").classList.add("maClasse"); // Ajouter
@@ -336,6 +349,11 @@ document.querySelector(".classe").nomAttribut = ""; // Retirer
 
 // Obtenir la valeur d'un attribut
 let x = document.querySelector(".classe").nomAttribut;
+```
+
+🎰 Obtenir un tableau d'éléments avec une classe en commun
+```js
+let elements = document.querySelectorAll(".maClasse");
 ```
 
 🎨 Modifier le style d’un élément
@@ -377,3 +395,38 @@ function changerCouleur(event){
 }
 ```
 
+### ⏰ Planificateurs
+
+⏳ Appeler une fonction une fois, après un certain délai
+```js
+setTimeout(maFonction, 250); // 250 est un nombre de millisecondes
+```
+
+➰ Appeler une fonction à répétition
+```js
+setInterval(maFonction, 250); // 250 est un nombre de millisecondes
+```
+
+🛑 Mettre fin à un planificateur à intervalles
+```js
+let monPlanificateur = setInterval(maFonction, 250);
+
+clearInterval(monPlanificateur); // Ceci met fin au planificateur
+```
+
+### 🐛 Conversion en nombres
+
+✅ Convertir une chaîne de caractères en nombre entier
+```js
+// x, y et z contiennent 25
+let x = parseInt("25px");
+let y = parseInt("25.15");
+let z = parseInt("25");
+```
+
+🔍 Convertir une chaîne de caractères en nombre à virgule
+```js
+// x et y contiennent 25.15
+let x = parseFloat("25.15px");
+let y = parseFloat("25.15");
+```
