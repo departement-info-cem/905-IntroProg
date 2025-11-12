@@ -235,12 +235,21 @@ else{
 }
 ```
 
+```js showLineNumbers
+switch(/* valeur */){
+    case 1 : /* ... code ... */ ; break;
+    case 2 : /* ... code ... */ ; break;
+    case 3 : /* ... code ... */  ; break;
+    default : /* ... code ... */ ; break;
+}
+```
+
 ### ➰ Boucles
 
 ```js showLineNumbers
 while( ... condition ... ){
 
-    // Coder à exécuter plusieurs fois
+    // Code à exécuter plusieurs fois
 
 }
 ```
@@ -248,9 +257,17 @@ while( ... condition ... ){
 ```js showLineNumbers
 do{
 
-    // Coder à exécuter plusieurs fois
+    // Code à exécuter plusieurs fois
 
 }while( ... condition ... );
+```
+
+```js showLineNumbers
+for(let i = 0; i < 5; i += 1){
+
+    // Code à exécuter plusieurs fois
+    
+}
 ```
 
 ### 🎰 Tableaux
