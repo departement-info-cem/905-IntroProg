@@ -47,7 +47,7 @@ Les boucles `while` et `for` sont **interchangeables** ! Les deux peuvent faire 
 
 La syntaxe de la boucle `for` est généralement considérée comme **plus élégante** si on connait d'avance le **nombre d'itérations** que doit faire la boucle.
 
-Vous êtes encouragés à **favoriser la boucle `for`** car on a moins de chance d'oublier de mettre le `i += 1;` qu'avec une boucle `while` !
+Vous êtes encouragés à **favoriser la boucle `for`** car on a moins de chances d'oublier de mettre le `i += 1;` qu'avec une boucle `while` !
 
 :::
 
@@ -141,7 +141,7 @@ Remarquez que l'équivalent avec `if`, `else if` et `else` est moins joli :
 
 > À quoi servent les `break` ?
 
-Avec un `switch`, lorsqu'un `case` est choisi, **tout le reste des `case` suivants sont exécutés...** à mions qu'un `break` soit rencontré !
+Avec un `switch`, lorsqu'un `case` est choisi, **tout le reste des `case` suivants sont exécutés...** à moins qu'un `break` soit rencontré !
 
 <center>![Blocs switch](../../static/img/cours22/switch3.png)</center>
 
