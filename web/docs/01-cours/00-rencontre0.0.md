@@ -244,6 +244,10 @@ switch(/* valeur */){
 }
 ```
 
+```js showLineNumbers
+let maVariable = condition ? valeur_si_vrai : valeur_si_faux;
+```
+
 ### ➰ Boucles
 
 ```js showLineNumbers
@@ -334,6 +338,16 @@ document.querySelector(".classe").textContent = "Nouveau texte";
 👂 Ajouter un écouteur d'événements pour un élément spécifique (Généralement dans `init()`) Les types d'événements utilisés dans ce cours sont `"click"`, `"mouseover"` et `"mouseout"`.
 ```js
 document.querySelector(".classe").addEventListener("type", nomFonction);
+```
+
+🥚 Créer un nouvel élément HTML
+```js
+let monElement = document.createElement("p"); // p car on crée un élément <p>
+```
+
+👨‍👦 Ajouter un élément dans un élément parent
+```js
+document.querySelector(".classeDuParent").appendChild(nouvelElement);
 ```
 
 🎹 Créer un écouteur d'événements clavier
