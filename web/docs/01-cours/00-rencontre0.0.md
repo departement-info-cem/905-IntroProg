@@ -133,6 +133,52 @@ alert("Skbidi");
 // Affiche un message dans la console du navigateur
 console.log("Natacha n'attache pas ses chats");
 ```
+### ⚙️📝 Fonctions textuelles
+
+```js
+let bonjour = "Bonjour à tous!"
+
+// 📏 Longueur d'une chaîne
+bonjour.length; // 15
+
+// 🤏 Sous-chaîne
+bonjour.substring(2, 5); // "njo"
+
+//☝ Remplacer un segment
+bonjour.replace("tous", "toustes"); // "Bonjour à toustes!"
+
+//✋ Remplacer plusieurs segments
+bonjour.replaceAll("t", "d"); // "Bonjour à dousdes!" 👃
+
+//📢 Majuscules / 🤫 Minuscules
+bonjour.toUpperCase(); // "BONJOUR À TOUS!"
+bonjour.toUpperCase(); // "bonjour à tous!"
+
+//🔍 Obtenir un caractère
+bonjour.charAt(1); // "o"
+
+```
+### ⚙️🧮 Fonctions mathématiques
+
+```js
+let  pi = 3.1415926535;
+// ⚪ Arrondir
+Math.round(pi); // 3
+
+//🔽🔼 Arrondir vers le bas / le haut
+Math.floor(pi); // 3
+Math.ceil(pi); // 4
+
+//⏬⏫ Minimum et maximum
+Math.max(1, 2, 3, 4, 5); // 5
+Math.min(1, 2, 3, 4, 5); // 1
+
+// 🎲 Nombre aléatoire
+Math.random(); // 0 à 1 ex.: 0.9873
+Math.random() * 5; // 0 à 5 ex.: 3.0958
+10 + Math.random() * 5; // 5 à 15 ex.: 8.78432
+1 + Math.floor(Math.random() * 5) // 1, 2, 3, 4, 5, 6
+```
 
 ### ⚖️ Opérateurs de comparaison
 
@@ -360,6 +406,15 @@ function nomFonction(event){
 
     let touche = event.key; // touche contient la touche appuyée (Ex : "ArrowUp")
 
+}
+```
+
+📢 Écouteurs d'événements avec paramètres
+```js
+document.querySelector(".classe").addEventListener("type", function(){ nomFonction("mon paramètre") });
+
+function nomFonction(monParametre) {
+    // ...
 }
 ```
 
