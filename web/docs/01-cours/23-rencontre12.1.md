@@ -17,7 +17,7 @@ Voici le code **identique** avec un `if ... else` :
 let message;
 
 if(gNote >= 60){
-    message = "Tu passes le cours !;
+    message = "Tu passes le cours !";
 }
 else{
     message = "Hmm... mauvaise nouvelle.";
