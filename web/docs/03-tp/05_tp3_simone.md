@@ -1,6 +1,6 @@
 # TP3 - Simone 💁‍♀️💡
 
-📦 Projet de départ :
+📦 Projet de départ : [Téléchargement](../../static/files/tp3_jeu2.zip)
 
 📽 Vidéo du résultat attendu : [Lien](https://youtu.be/42G_XLmggQ0)
 
@@ -106,7 +106,7 @@ N’ayez pas peur d’utiliser `setTimeout()` à profusion ! C’est très utile
         <td><br/>1 pt<br/>3 pts<br/>1 pt</td>
     </tr>
     <tr>
-        <td>Fonctions libres:<br/>• Lancement du jeu et conclusion du jeu.<br/>• Gestion d'un clic avec feedback visuel et vérification de la réponse.<br/>• Transition entre les manches. (Mise à jour de l'état du jeu, évolution de la séquence)</td>
+        <td>Fonctions libres :<br/>• Lancement du jeu et conclusion du jeu.<br/>• Gestion d'un clic avec feedback visuel et vérification de la réponse.<br/>• Transition entre les manches. (Mise à jour de l'état du jeu, évolution de la séquence)</td>
         <td><br/>3 pts<br/>3 pts<br/>3 pts</td>
     </tr>
     <tr>

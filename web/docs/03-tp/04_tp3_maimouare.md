@@ -119,7 +119,7 @@ Vous devrez coder tout le reste de la logique du jeu sans trop d’encadrement. 
         <td><br/>1 pt<br/>4 pts</td>
     </tr>
     <tr>
-        <td>Fonctions libres:<br/>• Lancement du jeu et conclusion du jeu.<br/>• Révélation d’une carte.<br/>• Comparaison de deux cartes.<br/>• Réaction à la suite d’une comparaison de deux cartes.</td>
+        <td>Fonctions libres :<br/>• Lancement du jeu et conclusion du jeu.<br/>• Révélation d’une carte.<br/>• Comparaison de deux cartes.<br/>• Réaction à la suite d’une comparaison de deux cartes.</td>
         <td><br/>2 pts<br/>1 pt<br/>1 pt<br/>3 pts</td>
     </tr>
     <tr>
