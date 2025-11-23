@@ -53,6 +53,8 @@ Ci-dessous, on oublie de parler de la **valeur retournée** :
 
 ## 📚 Apprendre d'autres langages
 
+<center>![Autres langages](../../static/img/cours26/langages.png)</center>
+
 Bien que nous ayons appris beaucoup de notions en **JavaScript**, nous n’avons vu **que les bases** ! 👶 Si vous explorez d’autres langages, vous rencontrerez plusieurs nouvelles notions qui ne vous seront pas familières.
 
 Malgré tout, n’ayez pas peur d’apprendre d’autres langages dès maintenant !
