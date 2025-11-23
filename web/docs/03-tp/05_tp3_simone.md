@@ -18,7 +18,7 @@ Vous aurez à créer quelques **écouteurs d’événements** très simples lors
 
 ### ⛳ Section guidée
 
-#### 1️⃣ allumerCouleur(couleur, onOuOff)
+#### 1️⃣ allumerOuEteindreCouleur(couleur, onOuOff)
 
 La `couleur` reçue en paramètre sera une des quatre couleurs du jeu. (`"bleu"`, `"rouge"`, `"jaune"` ou `"vert"`) De plus, le paramètre `onOuOff` contient `true` ou `false`. (`true` veut dire qu’on *allume*, `false` veut dire qu’on **éteint**) 
 
@@ -85,7 +85,7 @@ N’ayez pas peur d’utiliser `setTimeout()` à profusion ! C’est très utile
 
 ### 🐞 Bugs à prévenir
 
-* Cliquer sur les 4 couleurs du jeu ne fait rien car le jeu n’est pas actif.
+* Cliquer sur les 4 couleurs du jeu ne fait rien quand le jeu n’est pas actif.
 * Cliquer sur les 4 couleurs du jeu ne fait rien pendant que la séquence est en train d'être affichée pour la mémorisation.
 * Cliquer sur une couleur du jeu ne fait rien pour 400 millisecondes après avoir cliqué sur une couleur. (Éviter les double clics accidentels)
 * Il se peut que d'autres bugs doivent être prévenus.
@@ -111,7 +111,7 @@ N’ayez pas peur d’utiliser `setTimeout()` à profusion ! C’est très utile
     </tr>
     <tr>
         <td>Rédaction des commentaires pour la section libre :<br/>• Commentaires appropriés.<br/>• Français soigné.</td>
-        <td><br/>2 pts<br/>2 pts</td>
+        <td><br/>1.5 pts<br/>2.5 pts</td>
     </tr>
     <tr>
         <td>Qualité du code :<br/>• Usage stratégique des structures enseignées.*<br/>• Pas ou peu de code répétitif.<br/>• Le jeu ne présente pas de bogues (Hors fonctionnalités non réalisées)</td>

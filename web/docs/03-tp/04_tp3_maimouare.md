@@ -124,7 +124,7 @@ Vous devrez coder tout le reste de la logique du jeu sans trop d’encadrement. 
     </tr>
     <tr>
         <td>Rédaction des commentaires pour la section libre :<br/>• Commentaires appropriés.<br/>• Français soigné.</td>
-        <td><br/>2 pts<br/>2 pts</td>
+        <td><br/>1.5 pts<br/>2.5 pts</td>
     </tr>
     <tr>
         <td>Qualité du code :<br/>• Usage stratégique des structures enseignées.*<br/>• Pas ou peu de code répétitif.<br/>• Le jeu ne présente pas de bogues (Hors fonctionnalités non réalisées)</td>

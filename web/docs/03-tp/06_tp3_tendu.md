@@ -1,4 +1,4 @@
-# TP3 - Bonhomme tendu 😬
+# TP3 - Bonhomme tendu 😬🪢
 
 📦 Projet de départ : [Téléchargement](../../static/files/tp3_jeu3.zip)
 
@@ -88,7 +88,7 @@ Vous devrez coder tout le reste de la logique du jeu sans trop d’encadrement. 
 
 * On ne vous cachera pas que la fonction `tenterLettre(event)`, qui est déjà entamée, devra être appelée par un **écouteur d'événements clavier**...
 * N'ayez pas peur de modifier légèrement la fonction `placeLettre(lettre)` au besoin. Par exemple, dans le solutionnaire, une ligne de code a été ajoutée dans cette fonction. (Il se peut que vous trouviez une alternative cela dit !)
-* Il se peut aussi que vous souhaitiez faire des modifications dans les **fonctions guidées**, mais sans très possible de compléter le code sans le faire.
+* Il se peut aussi que vous souhaitiez faire des modifications dans les **fonctions guidées**, mais il est très possible de compléter le code sans le faire.
 
 ### 🐞 Bugs à prévenir
 
@@ -116,7 +116,7 @@ Vous devrez coder tout le reste de la logique du jeu sans trop d’encadrement. 
     </tr>
     <tr>
         <td>Rédaction des commentaires pour la section libre :<br/>• Commentaires appropriés.<br/>• Français soigné.</td>
-        <td><br/>2 pts<br/>2 pts</td>
+        <td><br/>1.5 pts<br/>2.5 pts</td>
     </tr>
     <tr>
         <td>Qualité du code :<br/>• Usage stratégique des structures enseignées.*<br/>• Pas ou peu de code répétitif.<br/>• Le jeu ne présente pas de bogues (Hors fonctionnalités non réalisées)</td>
