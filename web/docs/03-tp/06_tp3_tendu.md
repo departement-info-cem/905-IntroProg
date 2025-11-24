@@ -2,7 +2,7 @@
 
 📦 Projet de départ : [Téléchargement](../../static/files/tp3_jeu3.zip)
 
-📽 Vidéo du résultat attendu : [Lien](https://youtu.be/-CAlC_gth2o)
+📽 Vidéo du résultat attendu : [Lien](https://youtu.be/gr9Y3tf27V0)
 
 <center>![Aperçu du jeu](../../static/img/tp3/tendu.png)</center>
 
