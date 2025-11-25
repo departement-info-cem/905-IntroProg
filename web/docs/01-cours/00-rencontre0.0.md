@@ -381,7 +381,7 @@ let texte = document.querySelector(".classe").textContent;
 document.querySelector(".classe").textContent = "Nouveau texte";
 ```
 
-👂 Ajouter un écouteur d'événements pour un élément spécifique (Généralement dans `init()`) Les types d'événements utilisés dans ce cours sont `"click"`, `"mouseover"` et `"mouseout"`.
+👂 Ajouter un écouteur d'événements pour un élément spécifique (Généralement dans `init()`) Les types d'événements utilisés dans ce cours sont `"click"`, `"mouseover"`, `"mouseleave"` et `"mouseout"`.
 ```js
 document.querySelector(".classe").addEventListener("type", nomFonction);
 ```
