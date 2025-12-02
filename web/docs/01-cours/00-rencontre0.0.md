@@ -176,7 +176,7 @@ Math.min(1, 2, 3, 4, 5); // 1
 // 🎲 Nombre aléatoire
 Math.random(); // 0 à 1 ex.: 0.9873
 Math.random() * 5; // 0 à 5 ex.: 3.0958
-10 + Math.random() * 5; // 5 à 15 ex.: 8.78432
+5 + Math.random() * 10; // 5 à 15 ex.: 8.78432
 1 + Math.floor(Math.random() * 5) // 1, 2, 3, 4, 5, 6
 ```
 
