@@ -152,7 +152,7 @@ bonjour.replaceAll("t", "d"); // "Bonjour à dousdes!" 👃
 
 //📢 Majuscules / 🤫 Minuscules
 bonjour.toUpperCase(); // "BONJOUR À TOUS!"
-bonjour.toUpperCase(); // "bonjour à tous!"
+bonjour.toLowerCase(); // "bonjour à tous!"
 
 //🔍 Obtenir un caractère
 bonjour.charAt(1); // "o"
