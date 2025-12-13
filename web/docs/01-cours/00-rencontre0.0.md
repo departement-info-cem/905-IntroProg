@@ -157,6 +157,10 @@ bonjour.toLowerCase(); // "bonjour à tous!"
 //🔍 Obtenir un caractère
 bonjour.charAt(1); // "o"
 
+// Toutes ces fonctions ⚠️NE CHANGENT PAS LE CONTENU DE LA VARIABLE⚠️.
+// Au besoin, il faut le faire manuellement, exemple: 
+bonjour = bonjour.toUpperCase(); // maintenant bonjour contient "BONJOUR À TOUS!"
+
 ```
 ### ⚙️🧮 Fonctions mathématiques
 
