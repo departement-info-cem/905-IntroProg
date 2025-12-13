@@ -396,6 +396,11 @@ let monElement = document.createElement("p"); // p car on crée un élément <p>
 document.querySelector(".classeDuParent").appendChild(nouvelElement);
 ```
 
+❌ Retirer un élément de la page
+```js
+document.querySelector(".classe").remove()
+```
+
 🎹 Créer un écouteur d'événements clavier
 ```js
 function init(){
