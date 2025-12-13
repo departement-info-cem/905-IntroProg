@@ -286,10 +286,10 @@ else{
 ```
 
 ```js showLineNumbers
-switch(/* valeur */){
-    case 1 : /* ... code ... */ ; break;
-    case 2 : /* ... code ... */ ; break;
-    case 3 : /* ... code ... */  ; break;
+switch(/* la valeur à comparer */){
+    case /* première valeur possible */ : /* ... code ... */ ; break;
+    case /* deuxième valeur possible */ : /* ... code ... */ ; break;
+    case /* troisième valeur possible */ : /* ... code ... */  ; break;
     default : /* ... code ... */ ; break;
 }
 ```
