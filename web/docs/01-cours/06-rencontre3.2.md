@@ -1,141 +1,209 @@
 ---
-title: Cours 6 - Booléens et conditions
-description: Booléens et  conditions (if et else)
+title: Cours 6 - Opérateurs logiques
+description: Opérateurs logiques, else if et débogage
 ---
 
-# Cours 6 - Booléens et conditions
+# Cours 6 - Opérateurs logiques
 
-## 💡 Booléens
+## ❓ Bloc else if
 
-Les **booléens** sont un autre **type de données**. (Comme les **nombres** et les **chaînes de caractères**)
+Les **blocs `else if`** permettent d'avoir **une ou plusieurs conditions alternatives** après un **bloc `if`**.
 
-Il existe seulement **deux valeurs possibles** pour les **booléens** :
-
-* `true`
-* `false`
-
-Les **booléens** permettent d'exprimer que quelque chose est **vrai** ou **faux**.
-
-* 👀 Ai-je deux yeux ? `true`
-* 🍷 Suis-je majeur ? `true`
-* 🤔 Mon prénom contient la lettre T ? `false`
-* 🔥 Ai-je déjà utilisé un extincteur ? `true`
-
-Bien entendu, on peut **affecter** un **booléen** à une variable :
+Syntaxe :
 
 ```js showLineNumbers
-let estContent = true;
-let estAttentif = false;
+if( ... Condition 1 ... )
+{
+    // Code à exécuter si la condition 1 est « true »
+}
+else if( ... Condition 2 ... )
+{
+    // Code à exécuter si la condition 1 est « false » et la condition 2 est « true »
+}
+else
+{
+    // Code à exécuter si les conditions 1 et 2 sont « false »
+}
+
 ```
 
-:::danger
+Exemples :
 
-⛔ Attention ! Les **booléens** ne sont pas des **chaînes de caractères**
+* Ici, on tente d'abord d'exécuter le `if`, mais comme sa condition échoue, on tente d'exécuter le `else if` : sa condition est `true` et le code est exécuté ! Ensuite, on saute le `else` totalement.
 
-```js
-let livraisonCompletee = "true"; // Probablement une erreur d'inattention
+```js showLineNumbers
+let nbConjoints = 2;
+
+if(nbConjoints == 1)
+{
+    // 🚫 Pas exécuté car la condition (nbConjoints == 1) est false 
+    document.querySelector(".statut"). textContent = "En couple";
+}
+else if(nbConjoints > 1)
+{
+    // ✅ (nbConjoints > 1) est true ET la condition (nbConjoints == 1) est false, donc exécuté 
+    document.querySelector(".statut"). textContent = "En couple polyamoureux";
+}
+else
+{
+    // 🚫 Pas exécuté car un bloc précédent a déjà été exécuté
+    document.querySelector(".statut"). textContent = "Célibataire";
+}
 ```
 
-La variable `livraisonCompletee` contient une **chaîne de caractères**, pas un **booléen**. 
+<hr/>
 
-Les valeurs `"true"` et `true` sont deux choses **totalement différentes** !
+* Cette fois, les deux premiers blocs « échouent », alors le `else` doit être exécuté.
 
-:::
+```js showLineNumbers
+let nbConjoints = 0;
 
-## 🥇🥈 Opérateurs de comparaison
+if(nbConjoints == 1)
+{
+    // 🚫 Pas exécuté car la condition (nbConjoints == 1) est false 
+    document.querySelector(".statut"). textContent = "En couple";
+}
+else if(nbConjoints > 1)
+{
+    // 🚫 Pas exécuté car la condition (nbConjoints > 1) est false
+    document.querySelector(".statut"). textContent = "En couple polyamoureux";
+}
+else
+{
+    // ✅ car tous les blocs précédents ont échoué
+    document.querySelector(".statut"). textContent = "Célibataire";
+}
+```
 
-Tous ces opérateurs donnent un résultat qui est `true` ou `false`.
+### 💡 Précisions supplémentaires
 
-Par exemple, `1 < 2` signifie « `1` est-il plus petit que `2` ? » et le résultat sera `true`.
+On peut avoir plusieurs `else if` sans problème ! Tant qu'ils sont **précédés** d'un bloc `if` :
 
-<table>
-    <tr>
-        <th>Description</th>
-        <th>Opérateur</th>
-        <th>Exemple</th>
-        <th>Résultat</th>
-        <th>Explication</th>
-    </tr>
-    <tr>
-        <td>Plus grand que</td>
-        <td><center>`>`</center></td>
-        <td>`5.5 > 6.5`</td>
-        <td>`false`</td>
-        <td>`5.5` n'est pas plus grand que `6.5`</td>
-    </tr>
-    <tr>
-        <td>Plus petit que</td>
-        <td><center>`<`</center></td>
-        <td>`5 < 7`</td>
-        <td>`true`</td>
-        <td>`5` est bel et bien plus petit que `7`</td>
-    </tr>
-    <tr>
-        <td>Plus grand ou égal à</td>
-        <td><center>`>=`</center></td>
-        <td>`5 + 2 >= 5`</td>
-        <td>`true`</td>
-        <td>`7` est bel et bien plus grand (ou égal) à `5`</td>
-    </tr>
-    <tr>
-        <td>Plus petit ou égal à</td>
-        <td><center>`<=`</center></td>
-        <td>`5 <= 7 - 2`</td>
-        <td>`true`</td>
-        <td>`5` est bel et bien plus petit (ou égal) à `5`</td>
-    </tr>
-    <tr>
-        <td>Égal à</td>
-        <td><center>`==`</center></td>
-        <td>`5 - 4 == 7`</td>
-        <td>`false`</td>
-        <td>`1` n'est pas identique à `7`</td>
-    </tr>
-    <tr>
-        <td>N'est pas égal à</td>
-        <td><center>`!=`</center></td>
-        <td>`5 != 7`</td>
-        <td>`true`</td>
-        <td>`5` est bel et bien différent de `7`</td>
-    </tr>
-</table>
+```js showLineNumbers
+let lien = "oncle";
 
-Notez qu'au lieu de directement affecter `true` ou `false` à une variable, on peut le faire via une comparaison :
+if(lien == "père")
+{
+    console.log("C'est ton papa ! 👨");
+}
+else if(lien == "mère")
+{
+    console.log("C'est ta maman ! 👩");
+}
+else if(lien == "frère")
+{
+    console.log("C'est ton frère ! 👦");
+}
+else if(lien == "soeur")
+{
+    console.log("C'est ta soeur ! 👧");
+}
+else
+{
+    console.log("Euh... c'est quelqu'un 👽");
+}
+```
 
-<center>![Comparaison](../../static/img/cours6/comparaison.png)</center>
+<hr/>
+
+Il n'est pas obligatoire de placer un bloc `else` après le / les blocs `else if` (Au pire, rien ne sera exécuté) :
+
+```js showLineNumbers
+let economies = 357;
+
+if(economies > 10000){
+    console.log("Wow, à quand ton premier yacht ? 🚢");
+}
+else if(economies < 100){
+    console.log("Tu es sûr d'avoir besoin du dernier iPhone à chaque année ? 📱");
+}
+```
+
+<hr/>
+
+⛔ Attention, rappelez-vous que deux `if` consécutifs seront **totalement indépendants** !
+
+Ci-dessous, on gère le premier `if` tout seul. Ensuite, on gère le deuxième `if` et son `else if` ensemble, sans se préoccuper du premier `if` :
+
+```js showLineNumbers
+let couleur = "jaune";
+
+if(couleur == "jaune"){
+    document.querySelector(".image").style.borderColor = "yellow"; // ✅
+}
+
+if(couleur == "vert"){
+    document.querySelector(".image").style.borderColor = "green"; // 🚫
+}
+else if(couleur != "bleu"){
+    document.querySelector(".image").style.borderColor = "red"; // ✅
+}
+```
+
+## 🧩 Opérateurs logiques
+
+Les opérateurs logiques permettent de **combiner plusieurs comparaisons**.
+
+### Opérateur `&&` (« ET »)
+
+Le résultat est `true` **si les deux conditions sont `true`**.
+
+Ci-dessous, le résultat est `false` car la condition `2 > 3` est `false`.
+
+<center>![Et](../../static/img/cours7/and.png)</center>
+
+Cette condition fonctionnera seulement pour un `age` situé entre `18` et `29` :
+
+```js showLineNumbers
+if(age >= 18 && age < 30){
+    console.log("Tu es un jeune adulte ✨");
+}
+```
+
+### Opérateur `||` (« OU »)
+
+Le résultat est `true` **si au moins une condition est `true`**.
+
+Ci-dessous, le résultat est `true` car la condition `1 < 2` est `true`.
+
+<center>![Ou](../../static/img/cours7/or.png)</center>
+
+Cette condition fonctionnera si `age` est plus petit `4`, mais aussi si `age` est plus grand que `99` :
+
+```js showLineNumbers
+if(age < 4 || age > 99){
+    console.log("Tu ne peux pas jouer avec des LEGO 😭");
+}
+```
+
+<center>![LEGO](../../static/img/cours7/lego.png)</center>
 
 :::warning
 
-⛔ Attention ! Les opérateurs `==` et `=` sont **totalement différents** !
-
-* `=` Permet **d'affecter** une valeur à une variable :
-
-```js
-// x contient 5
-let x = 5;
-```
-
-* `==` permet de vérifier si deux valeurs sont **identiques** :
-
-```js
-// y contient false
-let y = 5 == 6;
-```
+⛔ Attention, l'opérateur `||` est constitué de deux barres verticales |, et non la lettre L en minuscule.
 
 :::
 
-### 🔤 Comparaison de chaînes de caractères
+### Opérateur `!` (« Inverse »)
 
-On peut utiliser les opérateurs `==` et `!=` avec des **chaînes de caractères** :
+Le booléen est inversé. (`true` devient `false`. `false` devient `true`)
 
-```js
-// x contient false, car les deux chaînes ne sont pas identiques
-let x = "allo" == "allo_";
-```
+Ci-dessous, `1 < 2` donne `true`, mais l'opérateur `!` **inverse le résultat**.
 
-```js
-// y contient true, car les deux chaînes sont bel et bien différentes
-let y = "salut" != "_salut";
+<center>![Inverse](../../static/img/cours7/not.png)</center>
+
+:::note
+
+Nous n'utiliserons pas vraiment l'opérateur `!` dans ce cours, mais il est parfois utile pour simplifier certaines conditions.
+
+:::
+
+Cette condition fonctionnera si `age` n'est ni plus petit que `4`, ni plus grand que `99` :
+
+```js showLineNumbers
+if( !(age < 4 || age > 99) ){
+    console.log("Tu peux jouer avec des LEGO 😏");
+}
 ```
 
 ### ⌛ Priorité des opérateurs
@@ -143,161 +211,132 @@ let y = "salut" != "_salut";
 L'**ordre de priorité** de tous les opérateurs que nous avons vu jusqu'ici est la suivante :
 
 1. Parenthèses `( ... )`
-2. Multiplication et division `*` `/`
-3. Addition et soustraction `+` `-`
-4. Comparaison `<` `>` `>=` `<=` `==` `!=`
-5. Affectation `=`
+2. Inverse `!`
+3. Multiplication et division `*` `/`
+4. Addition et soustraction `+` `-`
+5. Comparaison `<` `>` `>=` `<=` `==` `!=`
+6. Opérateurs logiques `&&` `||`
+7. Affectation `=`
 
-<center>![Priorité des opérateurs](../../static/img/cours6/priority.png)</center>
+### 🧠 Exemples plus complexes
 
-## ❓ Conditions
-
-### Bloc if
-
-Un **bloc if** exécute un morceau de code **seulement si sa condition est `true`**.
-
-Syntaxe :
-
-```js showLineNumbers
-if( ...condition... ){
-    // Code à exécuter si la condition est true
-}
-```
-
-* Les parenthèses `( ... )` contiennent la **condition**, qui doit être un booléen. (`true` ou `false`)
-* Les accolades `{ ... }` contiennent le code qui s'exécutera **seulement si la condition est `true`**.
-
-<hr/>
-
-#### Exemples simplissimes
-
-`"Allo"` sera affiché dans la console car la condition est `true` :
+Disons qu'on a trois âges :
 
 ```js
-if(true){
-    console.log("Allo"); // ✅
-}
+let ageAnne = 21;
+let ageTom = 19;
+let ageAli = 18;
 ```
 
-Rien ne sera affiché dans la console, car la condition est `false`. (Le bloc `if` est **sauté** / **ignoré** !) 
+On veut savoir : « Anne est-elle la plus vieille ? ». Autrement dit, **Anne est-elle plus vieille que Tom ET plus vieille qu'Ali ?** :
 
 ```js
-if(false){
-    console.log("Allo"); // 🚫
-}
-```
-
-<hr/>
-
-#### Exemples plus pertinents
-
-✅ Le contenu textuel de l'élément `.statut` va devenir "Majeur(e)" car `age` est bel et bien supérieur ou égal à `18` :
-
-```js showLineNumbers
-let age = 19;
-
-if(age >= 18){
-    document.querySelector(".statut").textContent = "Majeur(e)";
-}
-```
-
-🚫 Il ne va rien se passer car `animal` n'est pas identique à `"chat"` :
-
-
-```js showLineNumbers
-let animal = "chien";
-
-if(animal == "chat"){
-    document.querySelector(".message").textContent = "Miaou";
-}
+// Deviendra 21 > 19 && 21 > 18
+ageAnne > ageTom && ageAnne > ageAli
 ```
 
 :::danger
 
-⛔ Attention ! Une erreur **ultra fréquente** est de confondre `==` et `=` dans la condition !
+Attention ! On ne peut pas écrire l'expression comme ceci, ça ne fonctionnera pas :
 
-Ci-dessous, on a un problème : la condition est invalide ! Plutôt que de demander si **`x` vaut `5`**, on a mis « Affecte la valeur `5` à la variable `x` », ce qui ne fait pas de sens pour une condition.
-
-```js showLineNumbers
-if(x = 5){
-    document.querySelector(".message").textContent = "La variable x contient 5";
-}
-```
-
-✅ Bien entendu, la condition devait plutôt avoir l'air de ceci :
-
-```js showLineNumbers
-if(x == 5){
-    document.querySelector(".message").textContent = "La variable x contient 5";
-}
-```
+<center>![Mauvais Et](../../static/img/cours7/badAnd.png)</center>
 
 :::
 
-### Bloc else
+Disons qu'on a trois prix :
 
-Chaque bloc `if` **peut** être accompagné d'un bloc `else`.
-
-Syntaxe :
-
-```js showLineNumbers
-if( ...condition... ){
-    // Code à exécuter si la condition est true
-}
-else{
-    // Code à exécuter si la condition est false
-}
+```js
+let prixPomme = 2.99;
+let prixBanane = 1.99;
+let prixBleuet = 5.99;
 ```
 
-* Le bloc `else` **ne possède JAMAIS de condition**, car il est associé à la même condition que le `if` auquel il se rattache.
-* Le bloc `else` **s'exécute si la condition est `false`**. C'est un « plan de secours ». Ainsi, c'est toujours **soit le `if`, soit le `else` qui s'exécute**. (⛔ Jamais les deux !)
+On veut savoir : « Au moins un des trois prix est-il plus élevé que 5 ? ». Il faudra vérifier **chaque prix** :
 
-#### Exemple
-
-Ci-dessous, le comportement du code sera différent selon le montant d'argent dans la variable `argent` :
-
-* 😋 Si on a au moins `1.99` $, on va obtenir un paquet de gommes et perdre `1.99` $.
-* 😩 Sinon, on sera avisé qu'on n'a pas assez d'argent.
-
-```js showLineNumbers
-let argent = 2.15;
-
-if(argent >= 1.99){
-
-    document.querySelector(".message").textContent = "Voici ton paquet de gommes.";
-    argent -= 1.99;
-
-}
-else{
-
-    document.querySelector(".message").textContent = "Tu n'as pas assez d'argent. Get good !";
-
-}
+```js
+// Deviendra 2.99 > 5 || 1.99 > 5 || 5.99 > 5
+prixPomme > 5 || prixBanane > 5 || prixBleuet > 5
 ```
 
-:::warning
+:::danger
 
-<center>![Plusieurs ifs](../../static/img/cours6/ifs.png)</center>
+Attention ! On ne peut pas écrire l'expression comme ceci, ça ne fonctionnera pas :
 
-S'il y a plusieurs `if` consécutifs, sachez qu'ils sont **totalement indépendants**. 
-
-* Chaque `if` est vérifié (et exécuté si `true`), peu importe le résultat des `if` précédents.
-
-```js showLineNumbers
-// temps en minutes
-let temps = 21;
-
-if(temps > 15){
-    console.log("J'attends patiemment."); // Sera exécuté
-}
-
-if(temps > 20){
-    console.log("aaaaaaaaa c'est long 💀"); // Sera exécuté
-}
-
-if(temps > 25){
-    console.log("dodo 😴"); // Ne sera pas exécuté
-}
-```
+<center>![Mauvais Ou](../../static/img/cours7/badOr.png)</center>
 
 :::
+
+Disons qu'on a trois couleurs :
+
+```js
+let couleur1 = "rouge";
+let couleur2 = "rouge";
+let couleur3 = "bleu";
+```
+
+On veut savoir : « Les trois couleurs sont-elles identiques ? ». Il faudra au moins **vérifier deux paires** :
+
+```js
+// Deviendra "rouge" == "rouge" && "rouge" == "bleu"
+couleur1 == couleur2 && couleur2 == couleur3
+```
+
+:::danger
+
+Attention ! On ne peut pas écrire l'expression comme ceci, ça ne fonctionnera pas :
+
+<center>![Mauvais identique](../../static/img/cours7/badIdentical.png)</center>
+
+:::
+
+## 🐞 Débogage
+
+Un **bogue**, c'est un défaut de conception ou de réalisation dans un programme. Un **bogue** génère des **comportements inattendus** dans le code.
+
+🔍 Le **débogage**, c'est l'usage de stratégies qui permettent de **trouver** et **corriger** des **bogues**.
+
+Bien qu'il existe des outils de débogages sophistiqués, comme ce sont nos premiers pas en lien avec le **débogage**, nous allons surtout exploiter la **console du navigateur** pour y arriver.
+
+<center>![Trouver un bogue](../../static/img/cours7/bug.png)</center>
+
+### Ex. 1 : Bogue dans une fonction
+
+Nous avons la fonction suivante dont le but est de **modifier le texte de l'élément `.description`** :
+
+<center>![Trouver un bogue](../../static/img/cours7/bug1.png)</center>
+
+Hélas, lorsqu'on **teste** la fonction dans la console :
+
+<center>![Trouver un bogue](../../static/img/cours7/console1.png)</center>
+
+Malheureusement, la console nous répond **en anglais** et ses explications sont limitées. Cela dit :
+
+* On peut deviner que le problème est lié à `document.querySelector(...)`.
+* « document.querySelector(...) is null » signifie qu'aucun élément HTML n'a été trouvé avec la **classe** demandée.
+
+Vérifions la **classe** que nous avions utilisée dans le code :
+
+<center>![Trouver un bogue](../../static/img/cours7/missingPoint.png)</center>
+
+En vérifiant l'**aide-mémoire**, les **notes de cours** ou d'**autres fonctions similaires**, on peut déduire qu'il manque le `.` devant le nom de la classe.
+
+<center>![Trouver un bogue](../../static/img/cours7/missingPointSolved.png)</center>
+
+Bien entendu, il ne faut pas oublier de **tester à nouveau** pour s'assurer que tout fonctionne bien.
+
+### Ex. 2 : Deux bogues dans la même fonction
+
+<center>![Trouver un bogue](../../static/img/cours7/console2.png)</center>
+
+Cette fois-ci, la console nous indique que « `document.queryselector` n'est pas une fonction ».
+
+En vérifiant l'aide-mémoire attentivement, on peut comprendre que le `s` doit être en **majuscule** : `document.querySelector`.
+
+<center>![Trouver un bogue](../../static/img/cours7/console3.png)</center>
+
+En testant à nouveau, il n'y a plus de message d'erreur, mais **le texte dans la page n'a toujours pas changé** !
+
+* La console ne détecte pas toujours les bogues.
+* Le problème était avec `.textcontent`, qui s'écrit plutôt `.textContent`. (Vérifiable dans l'**aide-mémoire**)
+
+<center>![Trouver un bogue](../../static/img/cours7/uppercaseSolved.png)</center>

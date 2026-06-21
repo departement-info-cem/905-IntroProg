@@ -1,315 +1,303 @@
 ---
-title: Cours 5 - Événements et styles
-description: Variables globales, variables locales, écouteurs d'événements et styles (DOM)
+title: Cours 5 - Booléens et conditions
+description: Booléens et conditions (if et else)
 ---
 
-# Cours 5 - Événements et styles
+# Cours 5 - Booléens et conditions
 
-## 🔍 Variables globales et locales
+## 💡 Booléens
 
-Nous savons déjà comment déclarer une variable :
+Les **booléens** sont un autre **type de données**. (Comme les **nombres** et les **chaînes de caractères**)
 
-```js
-// 👶
-let age = 4;
+Il existe seulement **deux valeurs possibles** pour les **booléens** :
+
+* `true`
+* `false`
+
+Les **booléens** permettent d'exprimer que quelque chose est **vrai** ou **faux**.
+
+* 👀 Ai-je deux yeux ? `true`
+* 🍷 Suis-je majeur ? `true`
+* 🤔 Mon prénom contient la lettre T ? `false`
+* 🔥 Ai-je déjà utilisé un extincteur ? `true`
+
+Bien entendu, on peut **affecter** un **booléen** à une variable :
+
+```js showLineNumbers
+let estContent = true;
+let estAttentif = false;
 ```
 
-Toutefois, l'**emplacement** dans le code (dans `script.js`) où cette variable est déclarée est **important**.
+:::danger
 
-### 📌 Variables locales
+⛔ Attention ! Les **booléens** ne sont pas des **chaînes de caractères**
 
-⛔ Si une variable est déclarée **dans une fonction**, elle **n'existe qu'à l'intérieur de cette fonction**. (On ne peut pas l'utiliser ailleurs)
+```js
+let livraisonCompletee = "true"; // Probablement une erreur d'inattention
+```
 
-<center>![Variable locale](../../static/img/cours5/local.png)</center>
+La variable `livraisonCompletee` contient une **chaîne de caractères**, pas un **booléen**. 
 
-💡 La variable `phrase` est donc une **variable locale** et **existe seulement** dans `texte1()`.
-
-### 🌐 Variables globales
-
-⛔ Si une variable est déclarée **à l'extérieur de toute fonction** (donc PAS dans une fonction), elle **peut être utilisée n'importe où**.
-
-<center>![Variable globale](../../static/img/cours5/global.png)</center>
-
-💡 La variable `gPhrase` est donc une **variable globale** et **existe partout**.
-
-:::important
-
-Afin de différencier plus facilement ces deux types de variables, nous utiliserons la **convention** suivante dans ce cours :
-
-* Toutes les **variables globales** commenceront par la lettre `g`. (Ex : `gCouleur`, `gScore`, `gAge`, etc.)
-
-<center>![Convention de nom pour les variables globales](../../static/img/cours5/g.png)</center>
+Les valeurs `"true"` et `true` sont deux choses **totalement différentes** !
 
 :::
+
+## 🥇🥈 Opérateurs de comparaison
+
+Tous ces opérateurs donnent un résultat qui est `true` ou `false`.
+
+Par exemple, `1 < 2` signifie « `1` est-il plus petit que `2` ? » et le résultat sera `true`.
+
+<table>
+    <tr>
+        <th>Description</th>
+        <th>Opérateur</th>
+        <th>Exemple</th>
+        <th>Résultat</th>
+        <th>Explication</th>
+    </tr>
+    <tr>
+        <td>Plus grand que</td>
+        <td><center>`>`</center></td>
+        <td>`5.5 > 6.5`</td>
+        <td>`false`</td>
+        <td>`5.5` n'est pas plus grand que `6.5`</td>
+    </tr>
+    <tr>
+        <td>Plus petit que</td>
+        <td><center>`<`</center></td>
+        <td>`5 < 7`</td>
+        <td>`true`</td>
+        <td>`5` est bel et bien plus petit que `7`</td>
+    </tr>
+    <tr>
+        <td>Plus grand ou égal à</td>
+        <td><center>`>=`</center></td>
+        <td>`5 + 2 >= 5`</td>
+        <td>`true`</td>
+        <td>`7` est bel et bien plus grand (ou égal) à `5`</td>
+    </tr>
+    <tr>
+        <td>Plus petit ou égal à</td>
+        <td><center>`<=`</center></td>
+        <td>`5 <= 7 - 2`</td>
+        <td>`true`</td>
+        <td>`5` est bel et bien plus petit (ou égal) à `5`</td>
+    </tr>
+    <tr>
+        <td>Égal à</td>
+        <td><center>`==`</center></td>
+        <td>`5 - 4 == 7`</td>
+        <td>`false`</td>
+        <td>`1` n'est pas identique à `7`</td>
+    </tr>
+    <tr>
+        <td>N'est pas égal à</td>
+        <td><center>`!=`</center></td>
+        <td>`5 != 7`</td>
+        <td>`true`</td>
+        <td>`5` est bel et bien différent de `7`</td>
+    </tr>
+</table>
+
+Notez qu'au lieu de directement affecter `true` ou `false` à une variable, on peut le faire via une comparaison :
+
+<center>![Comparaison](../../static/img/cours6/comparaison.png)</center>
 
 :::warning
 
-Vous vous demandez peut-être :
+⛔ Attention ! Les opérateurs `==` et `=` sont **totalement différents** !
 
-> Pourquoi ne pas simplement toujours utiliser des variables **globales** ? Les variables **locales** ont clairement des *skill issues* !
+* `=` Permet **d'affecter** une valeur à une variable :
 
-🌐 Il faut surtout créer une **variable globale** lorsqu'on en a besoin dans **plusieurs fonctions**. Si une **variable globale** est seulement utilisée dans **une** fonction, autant la rendre **locale** pour que la **quantité de variables globales** reste **petite**.
+```js
+// x contient 5
+let x = 5;
+```
 
-🔍 Le code est généralement plus clair et facile à comprendre lorsqu'une variable est **déclarée** tout près de l'endroit où elle est **utilisée**.
+* `==` permet de vérifier si deux valeurs sont **identiques** :
+
+```js
+// y contient false
+let y = 5 == 6;
+```
 
 :::
 
-## 📢 Écouteurs d'événements
+### 🔤 Comparaison de chaînes de caractères
 
-Les **écouteurs d'événements** sont des *bidules* qui permettent **d'appeler des fonctions** suite à une **interaction** avec la page Web.
-
-* Exemple 1 : En **cliquant** sur un élément ... son texte change !
-
-<center>![Événement de clic](../../static/img/cours5/clickHard.png)</center>
-
-* Exemple 2 : En **survolant** un élément ... une alerte apparait !
-
-<center>![Événement de survol](../../static/img/cours5/badHover.png)</center>
-
-Pour le moment, nous allons voir **trois types d'événements** :
-
-* `click` : Appelle une fonction lorsqu'un élément HTML est **cliqué**
-* `mouseover` : Appelle une fonction lorsqu'un élément HTML est **survolé**
-* `mouseout` : Appelle une fonction lorsqu'un élément HTML **n'est plus survolé** (la souris sort de l'élément)
-
-### 🥚 Créer un écouteur d'événements
-
-Voici la syntaxe à utiliser :
+On peut utiliser les opérateurs `==` et `!=` avec des **chaînes de caractères** :
 
 ```js
-document.querySelector(".classe").addEventListener("type", nom_fonction);
+// x contient false, car les deux chaînes ne sont pas identiques
+let x = "allo" == "allo_";
 ```
-
-* `document.querySelector(".classe")` permet de cibler un élément HTML spécifique dans la page.
-* `type` doit être remplacé par `"click"`, `"mouseover"` ou `"mouseout"`.
-* `nom_fonction` doit être remplacé par le **nom de la fonction** qu'on souhaite appeler.
-
-#### 💡 Exemple
 
 ```js
-document.querySelector(".bouton1").addEventListener("click", changerTexte);
+// y contient true, car les deux chaînes sont bel et bien différentes
+let y = "salut" != "_salut";
 ```
 
-✅ La **fonction** `changerTexte()` sera appelée lorsque l'**élément avec la classe `bouton1`** sera **cliqué**.
+### ⌛ Priorité des opérateurs
 
-#### 🔍 Vue d'ensemble
+L'**ordre de priorité** de tous les opérateurs que nous avons vu jusqu'ici est la suivante :
 
-On a cet élément HTML dans la page :
+1. Parenthèses `( ... )`
+2. Multiplication et division `*` `/`
+3. Addition et soustraction `+` `-`
+4. Comparaison `<` `>` `>=` `<=` `==` `!=`
+5. Affectation `=`
 
-```html
-<button class="bouton1">Cliquez-moi délicatement</button>
-```
+<center>![Priorité des opérateurs](../../static/img/cours6/priority.png)</center>
 
-On a cette fonction dans `script.js` :
+## ❓ Conditions
+
+### Bloc if
+
+Un **bloc if** exécute un morceau de code **seulement si sa condition est `true`**.
+
+Syntaxe :
 
 ```js showLineNumbers
-function changerTexte(){
-    document.querySelector(".bouton1").textContent = "Tu as cliqué trop fort 😩";
+if( ...condition... ){
+    // Code à exécuter si la condition est true
 }
 ```
 
-Grâce à l'événement suivant ...
+* Les parenthèses `( ... )` contiennent la **condition**, qui doit être un booléen. (`true` ou `false`)
+* Les accolades `{ ... }` contiennent le code qui s'exécutera **seulement si la condition est `true`**.
+
+<hr/>
+
+#### Exemples simplissimes
+
+`"Allo"` sera affiché dans la console car la condition est `true` :
 
 ```js
-document.querySelector(".bouton1").addEventListener("click", changerTexte);
+if(true){
+    console.log("Allo"); // ✅
+}
 ```
 
-... lorsque nous allons **cliquer** sur l'élément avec la classe `bouton1`, la fonction `changerTexte()` sera **appelée**, ce qui aura pour effet de **changer le texte de l'élément avec la classe `bouton1`** :
+Rien ne sera affiché dans la console, car la condition est `false`. (Le bloc `if` est **sauté** / **ignoré** !) 
 
-<center>![Événement de clic](../../static/img/cours5/clickHard.png)</center>
+```js
+if(false){
+    console.log("Allo"); // 🚫
+}
+```
 
-### 📍 Où déclarer les écouteurs d'événements ?
+<hr/>
 
-Dans le cadre du cours, nous placerons toujours les **écouteurs d'événements** dans une fonction nommée `init()`. (Cette fonction sera automatiquement appelée lorsque la page Web sera **chargée par le navigateur Web**, ce qui rendra automatiquement tous les écouteurs d'événements fonctionnels)
+#### Exemples plus pertinents
+
+✅ Le contenu textuel de l'élément `.statut` va devenir "Majeur(e)" car `age` est bel et bien supérieur ou égal à `18` :
 
 ```js showLineNumbers
-function init(){
+let age = 19;
 
-    document.querySelector(".bouton1").addEventListener("click", changerTexte);
-    document.querySelector(".bouton2").addEventListener("click", lancerAlerte);
+if(age >= 18){
+    document.querySelector(".statut").textContent = "Majeur(e)";
+}
+```
+
+🚫 Il ne va rien se passer car `animal` n'est pas identique à `"chat"` :
+
+
+```js showLineNumbers
+let animal = "chien";
+
+if(animal == "chat"){
+    document.querySelector(".message").textContent = "Miaou";
+}
+```
+
+:::danger
+
+⛔ Attention ! Une erreur **ultra fréquente** est de confondre `==` et `=` dans la condition !
+
+Ci-dessous, on a un problème : la condition est invalide ! Plutôt que de demander si **`x` vaut `5`**, on a mis « Affecte la valeur `5` à la variable `x` », ce qui ne fait pas de sens pour une condition.
+
+```js showLineNumbers
+if(x = 5){
+    document.querySelector(".message").textContent = "La variable x contient 5";
+}
+```
+
+✅ Bien entendu, la condition devait plutôt avoir l'air de ceci :
+
+```js showLineNumbers
+if(x == 5){
+    document.querySelector(".message").textContent = "La variable x contient 5";
+}
+```
+
+:::
+
+### Bloc else
+
+Chaque bloc `if` **peut** être accompagné d'un bloc `else`.
+
+Syntaxe :
+
+```js showLineNumbers
+if( ...condition... ){
+    // Code à exécuter si la condition est true
+}
+else{
+    // Code à exécuter si la condition est false
+}
+```
+
+* Le bloc `else` **ne possède JAMAIS de condition**, car il est associé à la même condition que le `if` auquel il se rattache.
+* Le bloc `else` **s'exécute si la condition est `false`**. C'est un « plan de secours ». Ainsi, c'est toujours **soit le `if`, soit le `else` qui s'exécute**. (⛔ Jamais les deux !)
+
+#### Exemple
+
+Ci-dessous, le comportement du code sera différent selon le montant d'argent dans la variable `argent` :
+
+* 😋 Si on a au moins `1.99` $, on va obtenir un paquet de gommes et perdre `1.99` $.
+* 😩 Sinon, on sera avisé qu'on n'a pas assez d'argent.
+
+```js showLineNumbers
+let argent = 2.15;
+
+if(argent >= 1.99){
+
+    document.querySelector(".message").textContent = "Voici ton paquet de gommes.";
+    argent -= 1.99;
+
+}
+else{
+
+    document.querySelector(".message").textContent = "Tu n'as pas assez d'argent. Get good !";
 
 }
 ```
 
-:::info
+:::warning
 
-On peut mettre **autant** d'écouteurs d'événements **qu'on veut** dans la fonction `init()` !
+<center>![Plusieurs ifs](../../static/img/cours6/ifs.png)</center>
 
-:::
+S'il y a plusieurs `if` consécutifs, sachez qu'ils sont **totalement indépendants**. 
 
-:::note
-
-Pour que la fonction `init()` soit effectivement executée quand la page Web sera **chargée**, il faut rajouter l'attribut suivant à la balise `<body>` du fichier HTML.
-
-```html
-<body onload="init()">
-```
-
-Dans ce cours, cette opération sera toujours réalisée pour vous au préalable, donc vous n'aurez pas à le faire.
-
-:::
-
-## 👨‍🎨 Styles (DOM)
-
-À l'aide du **DOM** (Document Object Model), nous allons pouvoir modifier les **styles** d'un élément HTML. On peut appliquer des **styles CSS** sur demande à l'aide de JavaScript !
-
-La syntaxe à utiliser sera la suivante :
-
-```js
-document.querySelector(".classe").style.propriété = "valeur";
-```
-
-### 🎨 Couleur du texte
-
-Syntaxe :
-
-```js
-document.querySelector(".classe").style.color = "nomDeLaCouleur";
-```
-
-Exemple :
-
-<center>![Modification de style](../../static/img/cours5/color.png)</center>
-
-### 🟦 Couleur de fond
-
-Syntaxe :
-
-```js
-document.querySelector(".classe").style.backgroundColor = "nomDeLaCouleur";
-```
-
-Exemple :
-
-<center>![Modification de style](../../static/img/cours5/backgroundColor.png)</center>
-
-### 🔳 Style, couleur et largeur de bordure
-
-Syntaxe :
-
-```js
-document.querySelector(".classe").style.borderStyle = "nomDuStyle";
-document.querySelector(".classe").style.borderColor = "nomDeLaCouleur";
-document.querySelector(".classe").style.borderWidth = "NOMBREpx";
-```
-
-Exemple :
-
-<center>![Modification de style](../../static/img/cours5/border.png)</center>
-
-Le style peut prendre les valeurs `"none"` (pas de bordure, souvent le défaut), `"solid"` (bordure pleine) et bien d'autres (voir [**ici**](https://www.w3schools.com/cssref/pr_border-style.php)) 
-
-⛔ `px` est l'unité, ici la bordure fera 20 **pixels**. Si vous oubliez l'unité, la valeur de l'attribut ne sera pas changée.
-
-### 📏 Largeur et hauteur d'un élément
-
-Syntaxe :
-
-```js
-document.querySelector(".classe").style.width = "NOMBREpx";
-document.querySelector(".classe").style.height = "NOMBREpx";
-```
-
-Exemple :
-
-<center>![Modification de style](../../static/img/cours5/size.png)</center>
-
-:::note
-
-On a modifié la taille du `<div>` qui contient l'image. (On n'a pas modifié l'`<img>` !)
-
-:::
-
-### 👻 Opacité d'un élément
-
-Syntaxe :
-
-```js
-document.querySelector(".classe").style.opacity = 0.5;
-```
-
-⛔ Il faut utiliser une valeur entre `0` et `1` pour l'opacité. (`0.5` correspond à 50% d'opacité, par exemple)
-
-Exemple :
-
-<center>![Modification de style](../../static/img/cours5/opacity.png)</center>
-
-### 🙈 Visibilité d'un élément
-
-Syntaxe pour **rendre invisible** (retirer l'élément de la page) :
-
-```js
-document.querySelector(".classe").style.display = "none";
-```
-
-Syntaxe pour **rendre visible** (réafficher l'élément dans la page) :
-
-```js
-document.querySelector(".classe").style.display = "block";
-```
-
-### 🥊 Espacement depuis la gauche / le haut
-
-Syntaxe :
-
-```js
-document.querySelector(".classe").style.left = "NOMBREpx";
-document.querySelector(".classe").style.top = "NOMBREpx";
-```
-
-Exemple :
-
-<center>![Modification de style](../../static/img/cours5/topLeft.png)</center>
-
-### 🌈 Plus de couleurs
-
-Bien qu'il existe [**140 couleurs nommées**](https://www.w3schools.com/colors/colors_names.asp) en lettres comme ceci :
-
-```js
-// "red" est une couleur qui existe :
-document.querySelector(".classe").style.color = "red";
-```
-
-On peut utiliser des couleurs encore plus précises à l'aide de leur **code héxadécimal** :
-
-```js
-document.querySelector(".classe").style.color = "#DC143C";
-```
-
-<center>![Modification de style](../../static/img/cours5/hexaColor.png)</center>
-
-### ✨ Dans une fonction
-
-Bien entendu, on peut modifier les styles dans une **fonction** :
+* Chaque `if` est vérifié (et exécuté si `true`), peu importe le résultat des `if` précédents.
 
 ```js showLineNumbers
-function texteBleu(){
-    document.querySelector(".bouton1").style.color = "blue";
+// temps en minutes
+let temps = 21;
+
+if(temps > 15){
+    console.log("J'attends patiemment."); // Sera exécuté
+}
+
+if(temps > 20){
+    console.log("aaaaaaaaa c'est long 💀"); // Sera exécuté
+}
+
+if(temps > 25){
+    console.log("dodo 😴"); // Ne sera pas exécuté
 }
 ```
 
-On peut ensuite tester cette fonction avec un **écouteur d'événements** ou **directement dans la console** :
-
-<center>![Modification de style](../../static/img/cours5/testStyle.png)</center>
-
-## 🔩 DOM (récapitulatif)
-
-Jusqu'à maintenant, nous avons vu trois modifications possibles qui peuvent être réalisées sur une page Web à l'aide du **DOM** :
-
-* 📝 Manipuler le contenu textuel :
-
-```js
-document.querySelector(".classe").textContent = "Texte";
-```
-
-* 📢 Ajouter un écouteur d'événements :
-
-```js
-document.querySelector(".classe").addEventListener("type", maFonction);
-```
-
-* 🎨 Modifier les styles :
-
-```js
-document.querySelector(".classe").style.propriété = "valeur de style";
-```
+:::

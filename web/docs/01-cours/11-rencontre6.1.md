@@ -1,139 +1,151 @@
 ---
-title: Cours 11 - Retours
-description: Fonctions avec retours
+title: Cours 11 - Boucles
+description: Boucles while et boucles do while
 ---
 
-# Cours 11 - Retours
+# Cours 11 - Boucles
 
-## 📬 Retourner une valeur
+Remarquez ce code plutôt répétitif :
 
-Voici un exemple de fonction **avec une valeur de retour** :
+<center>![Répétition](../../static/img/cours16/repeating.png)</center>
+
+La seule chose qui varie entre ces lignes de code est la **classe** des éléments HTML.
+
+On pourrait rendre le code moins répétitif avec une **fonction avec paramètre**, mais il faudrait quand même
+appeler la fonction **6 fois** !
+
+## ➰ Boucles while
+
+Les boucles permettent de **répéter** du code !
+
+Syntaxe :
 
 ```js showLineNumbers
-function valeurPi(){
+while( ... condition ... ){
 
-    let pi = 3.14159265359;
-    return pi;
+    // Code à répéter
 
 }
 ```
 
-Grâce au **mot clé `return`**, on peut dire que « la fonction `valeurPi()` retournera la valeur `3.14159265359` ».
+C'est un peu comme un `if`, sauf que le code à l'intérieur de la boucle va **s'exécuter à répétition tant que la condition reste `true`**.
 
-## 📞 Appeler une fonction avec retour
-
-Voici ce qui se passe lorsqu'on appelle une **fonction avec valeur de retour** comme `valeurPi()` :
-
-<center>![Valeur de retour](../../static/img/cours11/return.png)</center>
+<center>![Boucle while](../../static/img/cours16/while.png)</center>
 
 <hr/>
 
-<center>![Animation de return](../../static/img/cours11/returnGif.gif)</center>
+#### Exemple pas-à-pas
 
-### 💡 Exemple un peu plus utile
+<center>![Boucle while](../../static/img/cours16/progress.png)</center>
 
-La fonction `Math.random()` existe par défaut. (Pas besoin de la créer, comme `alert()` et `console.log()` !)
+### 💡 Quelques exemples
 
-`Math.random()` retourne **un nombre aléatoire entre `0` et `0.99999...`**. Très utile pour simuler le **hasard** ! 🎲
+#### Exemple 1
 
-<center>![Valeur aléatoire](../../static/img/cours11/random.png)</center>
+Cette boucle fera **9 itérations**. (9 répétitions) On se sert de la variable `i` pour ajouter du **contenu textuel** :
 
-Exemple : on a **25% de chances de gagner 100$** et **75% de chances de perdre 50$** :
+<center>![Boucle while](../../static/img/cours16/while2.png)</center>
 
-```js showLineNumbers
-function jouer(){
+#### Exemple 2
 
-    let nombreAleatoire = Math.random();
+Cette boucle fera **4 itérations**. À chaque itération, on incrémente la variable `valeur` avec la valeur de `i`.
 
-    if(nombreAleatoire < 0.25){
+<center>![Boucle while](../../static/img/cours16/while1.png)</center>
 
-        gArgent += 100;
+La valeur finale est : `10 + 1 + 2 + 3 + 4`, donc `20`.
 
-    }
-    else{
+#### Exemple 3
 
-        gArgent -= 50;
+Cette boucle fera **3 itérations**. À chaque itération, la classe `image` est ajoutée à un élément HTML.
 
-    }
+<center>![Boucle while](../../static/img/cours16/while3.png)</center>
 
-}
-```
+### 🔨 Construire une boucle
 
-* Dans la variable `nombreAleatoire`, il y aura une valeur entre `0` et `0.9999...`. On ne sait pas d'avance quelle sera la valeur ! La valeur changera à chaque fois que nous appellerons la fonction `jouer()`.
-* Avec ce `if` ... `else`, on a 25% de chances d'exécuter le `if` et 75% de chances d'exécuter le `else`.
+Commencez par analyser du **code répétitif** pour **trouver les différences**.
 
-<center>![Probabilité illustrée](../../static/img/cours11/odds.png)</center>
+<center>![Répétitions](../../static/img/cours16/daenerys.png)</center>
 
-## 🛑 Point de non-retour
+La seule chose qui varie dans ces 3 lignes de code, c'est le **numéro** à la fin de la **classe**.
 
-:::warning
+On a besoin d'une boucle où la variable `i` vaudra `1`, puis `2`, puis `3`.
 
-⛔ Notez que dès que l'instruction `return` est exécutée, **on met fin** à la fonction !
+Squelette de la boucle :
 
-<center>![Fonction avortée](../../static/img/cours11/noReturn.png)</center>
+<center>![Boucle while](../../static/img/cours16/skeleton.png)</center>
 
-:::
+* `i` commencera à `1`. (Grâce à `let i = 1;`)
+* `i` va augmenter de `1` à chaque itération. (Grâce à `i += 1;`)
+* `i` va s'arrêter à `3`. (Grâce à `i < 4`)
 
-## 📜 Exemples variés
+Il reste à intégrer le code et se servir de la variable `i` :
 
-Voici une fonction qui retourne `true` si trois variables globales sont **identiques**, et `false` sinon :
+<center>![Boucle while](../../static/img/cours16/whileDone.png)</center>
 
-```js showLineNumbers
-function tousEgaux(){
+<hr/>
 
-    if(gNombre1 == gNombre2 && gNombre1 == gNombre3){
-        return true;
-    }
-    return false;
+En résumé :
 
-}
-```
+<center>![Boucle while](../../static/img/cours16/conversion.png)</center>
 
 :::tip
 
-Pas besoin de mettre `return false` dans un bloc `else` ! Ce bout de code sera seulement atteint si le bloc `if` n'a pas été exécuté de toute façon !
+S'il y avait eu 3 images supplémentaires avec les classes `daenerys4`, `daenerys5` et `daenerys6`, il suffirait de remplacer la condition de la boucle par `i < 7`, tout simplement !
 
 :::
 
-Voici une fonction qui reçoit deux **paramètres** (deux nombres nommés `x` et `y`) et qui **retourne le plus grand des deux** :
+### 🌌 Boucles infinies
+
+:::danger
+
+⛔ Attention ! Les boucles peuvent **figer la page Web** si elles s'exécutent à l'infini.
 
 ```js showLineNumbers
-function maximum(x, y){
+let i = 1;
 
-    if(x > y){
-        return x;
-    }
-    return y;
-
+while(i < 4){
+    console.log("Oups ! Boucle infinie.");
 }
 ```
 
-```js
-let nombre = maximum(2, 4); // nombre contient 4
-```
+Ici, on a oublié **d'incrémenter la valeur de `i`** dans la boucle, donc `i` vaudra toujours `1` et la condition `i < 4` sera **toujours `true`** !
 
-<hr/>
+:::
 
-<center>![Animation de return](../../static/img/cours11/paramReturnGif.gif)</center>
+### 🧩 Exemples avancés
 
-<hr/>
+#### Exemple 1
 
-Voici une fonction qui reçoit un **paramètre** (une chaîne de caractères nommée `nom`) et qui **retourne une chaîne de caractères qui correspond à un message de salutations** :
+On peut très bien intégrer des blocs `if` (et d'autres types de blocs) dans des boucles `while` :
+
+<center>![Boucle while](../../static/img/cours16/whileIf.png)</center>
+
+#### Exemple 2
+
+Les **conditions** de nos boucles peuvent être aussi sophistiquées que nécessaire :
+
+<center>![Boucle while](../../static/img/cours16/whileAnd.png)</center>
+
+* À chaque itération, `x` augmente de `1` et `y` diminue de `2`.
+* À cause de la **condition**, dès que `x` atteindra `5` ou plus OU dès que `y` atteindra `5` ou moins, la boucle s’**arrêtera**.
+* Comme `y` diminue plus rapidement que `x` augmente, la boucle s’arrête alors que `x` respecte encore la condition, mais `y` vaut `4` et ne respecte plus la condition.
+
+## 🏁 Boucles do while
+
+Syntaxe :
 
 ```js showLineNumbers
-function saluer(nom){
+do{
 
-    return `Salut ${nom}, comment tu vas ?`;
+    // Code à répéter
 
-}
+}while( ... condition ...);
 ```
 
-```js
-alert(saluer("Simone"));
-```
+* Très similaire à une boucle `while`, mais la **condition** est vérifiée **APRÈS chaque itération**. (Plutôt qu’avant) Cela signifie qu’il y aura forcément **au moins une itération**.
+* Avec une boucle `while`, si la condition était `false` initialement, elle n’effectuerait tout simplement **aucune itération**.
 
-<center>![Alerte](../../static/img/cours11/alert.png)</center>
-
+<center>![Boucle do while](../../static/img/cours16/doWhile.png)</center>
 
 ## 🪳 Débogueur (Optionnel)
 

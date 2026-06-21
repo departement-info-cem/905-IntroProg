@@ -1,231 +1,315 @@
 ---
-title: Cours 4 - VS Code et fonctions
-description: Projets Web avec Visual Studio Code, fonctions, alert(), console.log() et commentaires.
+title: Cours 4 - Événements et styles
+description: Variables globales, variables locales, écouteurs d'événements et styles (DOM)
 ---
 
-# Cours 4 - VS Code et fonctions
+# Cours 4 - Événements et styles
 
-## 📝 Visual Studio Code
+## 🔍 Variables globales et locales
 
-C'est un **éditeur de code** utilisable pour plein de langages, dont **HTML, CSS et JavaScript**. Nous l'utiliserons pour nos projets Web.
-
-* 💰 Logiciel gratuit. [N'hésitez pas à l'installer à la maison](https://code.visualstudio.com/download).
-* ✅ Déjà installé au Cégep. Prêt à être utilisé !
-* 🔵 L'icône est bleue, et le bleu, c'est une couleur relaxante.
-
-### 🌳 Structure d'un projet Web
-
-Pour tous nos projets durant la session, nous utiliserons cette structure dans nos projets Web :
-
-<center>![Structure d'un projet Web](../../static/img/cours4/projectFolder.png)</center>
-
-### 📂 Ouvrir un projet avec VS Code
-
-1. Fichier -> Ouvrir le dossier...
-
-<center>![Ouvrir un projet dans VS Code](../../static/img/cours4/open1.png)</center>
-
-2. Cliquer sur le dossier principal du projet, puis appuyer sur **Sélectionner un dossier**.
-
-<center>![Ouvrir un projet dans VS Code](../../static/img/cours4/open2.png)</center>
-
-Et voilà, le projet est **ouvert dans VS Code** et on a accès à tous ses **sous-dossiers** et **fichiers** dans l'interface :
-
-<center>![Ouvrir un projet dans VS Code](../../static/img/cours4/open3.png)</center>
-
-### 🔄 Alternative
-
-On peut aussi simplement trouver le dossier principal du projet Web puis faire `clic-droit -> Ouvrir avec Code` !
-
-<center>![Ouvrir un projet dans VS Code](../../static/img/cours4/open4.png)</center>
-
-## 🔩 Fonctions
-
-### 🤔 Qu'est-ce qu'une fonction ?
-
-Commençons par un exemple mystérieux : lorsqu'on écrit `changerTexte()` dans la console... le contenu textuel du titre de cette page change 😱
-
-<center>![Appel d'une fonction](../../static/img/cours4/magic.png)</center>
-
-> Wohlala, comment c'est possible ? On n'a même pas utilisé `document.querySelector(...).textContent = ...` !
-
-#### 💡 Explication
-
-En réalité, `changerTexte()` est ce qu'on appelle une **fonction**. Une **fonction**, ça contient un **morceau de code** de notre choix.
-
-Voici la **déclaration** de la **fonction** `changerTexte()`, que nous avions rédigée avant de l'utiliser dans la console :
+Nous savons déjà comment déclarer une variable :
 
 ```js
-function changerTexte(){
-    
-    document.querySelector(".titre").textContent = "Meme cat";
-
-}
+// 👶
+let age = 4;
 ```
 
-Décortiquons un peu tout ce code :
+Toutefois, l'**emplacement** dans le code (dans `script.js`) où cette variable est déclarée est **important**.
 
-* `function` est un **mot-clé obligatoire** qui indique qu'on souhaite « déclarer une fonction ».
-* `changerTexte` est le **nom de la fonction**. On le choisit nous-mêmes !
-* `()` Les **parenthèses vides** après le nom de la fonction sont **obligatoires**. Elles semblent inutiles pour le moment, c'est normal.
-* `{ ... }` Les **accolades** sont **obligatoires** et permettent d'indiquer **où le code de la fonction commence** et **où le code de la fonction se termine**.
+### 📌 Variables locales
 
-Le fait d'avoir **déclaré la fonction** nous permet de **l'appeler** à volonté. (Entre autre dans la console !) En gros, une fonction, c'est **un morceau de code réutilisable** créé par nous.
+⛔ Si une variable est déclarée **dans une fonction**, elle **n'existe qu'à l'intérieur de cette fonction**. (On ne peut pas l'utiliser ailleurs)
 
-<center>![Appel d'une fonction](../../static/img/cours4/call.png)</center>
+<center>![Variable locale](../../static/img/cours5/local.png)</center>
 
-### 🔍 Où déclarer une fonction ?
+💡 La variable `phrase` est donc une **variable locale** et **existe seulement** dans `texte1()`.
 
-À quel endroit doit-on rédiger la **déclaration de la fonction** ? (Le machin ci-dessous)
+### 🌐 Variables globales
 
-```js
-function changerTexte(){
-    
-    document.querySelector(".titre").textContent = "Meme cat";
+⛔ Si une variable est déclarée **à l'extérieur de toute fonction** (donc PAS dans une fonction), elle **peut être utilisée n'importe où**.
 
-}
-```
+<center>![Variable globale](../../static/img/cours5/global.png)</center>
 
-:::danger
+💡 La variable `gPhrase` est donc une **variable globale** et **existe partout**.
 
-Pas dans la console en tout cas ! 
+:::important
 
-Si nous déclarons la fonction dans la console, **elle n'existera plus lorsqu'on réactualisera la page** !
+Afin de différencier plus facilement ces deux types de variables, nous utiliserons la **convention** suivante dans ce cours :
 
-<center>![Déclaration de fonction dans la console](../../static/img/cours4/wrongPlace.png)</center>
+* Toutes les **variables globales** commenceront par la lettre `g`. (Ex : `gCouleur`, `gScore`, `gAge`, etc.)
+
+<center>![Convention de nom pour les variables globales](../../static/img/cours5/g.png)</center>
 
 :::
-
-La fonction doit être **déclarée** dans un **fichier avec l'extension `.js`**, dans le dossier `js` de notre **projet Web**.
-
-
-<center>![Déclaration de fonction dans un fichier js](../../static/img/cours4/functionDeclaration.png)</center>
-
-:::note
-
-Notez que pour pouvoir **appeler la fonction** dans la console d'une page Web spécifique, il faut avoir ajouté cette ligne dans le `<head>` de la page Web :
-
-<center>![Importer script js](../../static/img/cours4/importScript.png)</center>
-
-« `script.js` » correspond au fichier qui **contient la ou les déclarations de fonction**.
-
-**Bonne nouvelle** : dans ce cours, cette opération sera toujours réalisée pour vous au préalable, donc vous n'aurez pas à le faire.
-
-:::
-
-### 🐥 Fonctions préexistantes
-
-Certaines fonctions **existent déjà** en JavaScript sans qu'on ait besoin de les déclarer nous-mêmes.
-
-Quelques exemples :
-
-* `document.querySelector()` (que nous connaissons déjà)
-* `alert()`
-* `console.log()`
-
-#### Afficher du texte dans une alerte avec `alert()`
-
-La fonction `alert()` permet de créer un « pop-up » (une *alerte*) dans la page avec le **message de notre choix**.
-
-Il suffit d'inclure une **chaîne de caractères** à l'intérieur des parenthèses. (N'oubliez pas les guillemets ! `" ... "`)
-
-<center>![Alerte](../../static/img/cours4/alert.png)</center>
-
-#### Afficher du texte dans la console avec `console.log()`
-
-La fonction `console.log()` permet simplement d’afficher du texte dans la console du navigateur. Attention, en programmation, on dit parfois « **imprimer** du texte dans la console » plutôt que « afficher » !
-
-Il suffit d'inclure une **chaîne de caractères** à l'intérieur des parenthèses. (N'oubliez pas les guillemets ! `" ... "`)
-
-<center>![Message dans la console](../../static/img/cours4/consoleLog.png)</center>
-
-### 💬 Commentaires
-
-Les commentaires permettent de **rédiger des annotations dans le code.** Ils sont **ignorés** lorsque l'application est exécutée : c'est comme s'ils n'existaient pas ! Ça sert à laisser des **notes / descriptions** dans le code pour se retrouver. 🔍
-
-Pour rédiger un **commentaire mono-ligne**, on utilise `//` au début du commentaire :
-
-<center>![Commentaire](../../static/img/cours4/singleLine.png)</center>
-
-Pour rédiger un **commentaire multi-ligne**, on utilise `/*` au **début** du commentaire et `*/` à la **fin** du commentaire :
-
-<center>![Commentaire](../../static/img/cours4/multiLine.png)</center>
-
-:::note
-
-Dans les exemples ci-dessus, il faut comprendre que c'est comme si les variables `c` et `d` n'existaient pas ! Il sera impossible de les utiliser.
-
-:::
-
-### 🥚 Créer une fonction
-
-#### 🔍 Étape 1
-
-Premièrement, il faut trouver (ou créer) le fichier `script.js` dans notre projet Web, puisque c'est à l'intérieur qu'on devra **déclarer notre fonction**.
-
-<center>![Fichier script.js](../../static/img/cours4/whereFile.png)</center>
-
-#### 🦴 Étape 2
-
-Deuxièmement, il faut **préparer la structure de la fonction** et la **nommer**.
-
-Dans ce cas-ci, on a nommé la fonction `texteSalade` :
-
-<center>![Déclaration de la fonction](../../static/img/cours4/saladFunction.png)</center>
-
-:::danger
-
-Une **erreur fréquente** lorsqu'on déclare une fonction est d'**oublier** une accolade ou **mal placer** les accolades :
-
-<center>![Mal déclarer la fonction](../../static/img/cours4/messedUpBrackets.png)</center>
-
-:::
-
-#### 📝 Étape 3
-
-Troisièmement, on doit **rédiger le code de la fonction**
-
-Bien entendu, c'est nous qui décidons ce que la fonction va faire. Par exemple, disons qu'on veut faire trois choses :
-
-* Remplacer le texte `"est le meilleur chat"` par `"veut manger sa salade en paix."` dans la page.
-* Afficher une **alerte** avec le message `"Texte changé !"`.
-* Afficher le message `"Fonction terminée."` dans la **console**.
-
-On va commencer par jeter un coup d'oeil au code HTML pour trouver la **classe** de l'élément dont on souhaite **changer le texte** :
-
-```html
-<p class="description">est le meilleur chat.</p>
-```
-
-Puis on va pouvoir écrire le code dans la fonction :
-
-```js showLineNumbers
-function texteSalade(){
-
-    // Changer le texte dans la page
-    document.querySelector(".description").textContent = "veut manger sa salade en paix.";
-
-    // Afficher une alerte
-    alert("Texte changé !");
-
-    // Afficher un message dans la console
-    console.log("Fonction terminée.");
-
-}
-```
-
-#### 🔩 Étape 4
-
-Quatrièmement : **tester** la fonction ! Il est possible qu'on ait fait des **erreurs** 🐞 ! Il faut s'assurer que ça fonctionne comme prévu.
-
-Généralement, pour **tester une fonction**, on va **l'appeler dans la console** :
-
-<center>![Tester la fonction](../../static/img/cours4/testingSalad.png)</center>
 
 :::warning
 
-N'oubliez jamais les **parenthèses vides** lorsque vous appelez une fonction ! Si vous oubliez les parenthèses, plutôt que **d'appeler** la fonction pour la tester, cela va seulement **afficher la fonction sans l'appeler** !
+Vous vous demandez peut-être :
 
-<center>![Mal tester la fonction](../../static/img/cours4/forgotParenthesis.png)</center>
+> Pourquoi ne pas simplement toujours utiliser des variables **globales** ? Les variables **locales** ont clairement des *skill issues* !
+
+🌐 Il faut surtout créer une **variable globale** lorsqu'on en a besoin dans **plusieurs fonctions**. Si une **variable globale** est seulement utilisée dans **une** fonction, autant la rendre **locale** pour que la **quantité de variables globales** reste **petite**.
+
+🔍 Le code est généralement plus clair et facile à comprendre lorsqu'une variable est **déclarée** tout près de l'endroit où elle est **utilisée**.
 
 :::
+
+## 📢 Écouteurs d'événements
+
+Les **écouteurs d'événements** sont des *bidules* qui permettent **d'appeler des fonctions** suite à une **interaction** avec la page Web.
+
+* Exemple 1 : En **cliquant** sur un élément ... son texte change !
+
+<center>![Événement de clic](../../static/img/cours5/clickHard.png)</center>
+
+* Exemple 2 : En **survolant** un élément ... une alerte apparait !
+
+<center>![Événement de survol](../../static/img/cours5/badHover.png)</center>
+
+Pour le moment, nous allons voir **trois types d'événements** :
+
+* `click` : Appelle une fonction lorsqu'un élément HTML est **cliqué**
+* `mouseover` : Appelle une fonction lorsqu'un élément HTML est **survolé**
+* `mouseout` : Appelle une fonction lorsqu'un élément HTML **n'est plus survolé** (la souris sort de l'élément)
+
+### 🥚 Créer un écouteur d'événements
+
+Voici la syntaxe à utiliser :
+
+```js
+document.querySelector(".classe").addEventListener("type", nom_fonction);
+```
+
+* `document.querySelector(".classe")` permet de cibler un élément HTML spécifique dans la page.
+* `type` doit être remplacé par `"click"`, `"mouseover"` ou `"mouseout"`.
+* `nom_fonction` doit être remplacé par le **nom de la fonction** qu'on souhaite appeler.
+
+#### 💡 Exemple
+
+```js
+document.querySelector(".bouton1").addEventListener("click", changerTexte);
+```
+
+✅ La **fonction** `changerTexte()` sera appelée lorsque l'**élément avec la classe `bouton1`** sera **cliqué**.
+
+#### 🔍 Vue d'ensemble
+
+On a cet élément HTML dans la page :
+
+```html
+<button class="bouton1">Cliquez-moi délicatement</button>
+```
+
+On a cette fonction dans `script.js` :
+
+```js showLineNumbers
+function changerTexte(){
+    document.querySelector(".bouton1").textContent = "Tu as cliqué trop fort 😩";
+}
+```
+
+Grâce à l'événement suivant ...
+
+```js
+document.querySelector(".bouton1").addEventListener("click", changerTexte);
+```
+
+... lorsque nous allons **cliquer** sur l'élément avec la classe `bouton1`, la fonction `changerTexte()` sera **appelée**, ce qui aura pour effet de **changer le texte de l'élément avec la classe `bouton1`** :
+
+<center>![Événement de clic](../../static/img/cours5/clickHard.png)</center>
+
+### 📍 Où déclarer les écouteurs d'événements ?
+
+Dans le cadre du cours, nous placerons toujours les **écouteurs d'événements** dans une fonction nommée `init()`. (Cette fonction sera automatiquement appelée lorsque la page Web sera **chargée par le navigateur Web**, ce qui rendra automatiquement tous les écouteurs d'événements fonctionnels)
+
+```js showLineNumbers
+function init(){
+
+    document.querySelector(".bouton1").addEventListener("click", changerTexte);
+    document.querySelector(".bouton2").addEventListener("click", lancerAlerte);
+
+}
+```
+
+:::info
+
+On peut mettre **autant** d'écouteurs d'événements **qu'on veut** dans la fonction `init()` !
+
+:::
+
+:::note
+
+Pour que la fonction `init()` soit effectivement executée quand la page Web sera **chargée**, il faut rajouter l'attribut suivant à la balise `<body>` du fichier HTML.
+
+```html
+<body onload="init()">
+```
+
+Dans ce cours, cette opération sera toujours réalisée pour vous au préalable, donc vous n'aurez pas à le faire.
+
+:::
+
+## 👨‍🎨 Styles (DOM)
+
+À l'aide du **DOM** (Document Object Model), nous allons pouvoir modifier les **styles** d'un élément HTML. On peut appliquer des **styles CSS** sur demande à l'aide de JavaScript !
+
+La syntaxe à utiliser sera la suivante :
+
+```js
+document.querySelector(".classe").style.propriété = "valeur";
+```
+
+### 🎨 Couleur du texte
+
+Syntaxe :
+
+```js
+document.querySelector(".classe").style.color = "nomDeLaCouleur";
+```
+
+Exemple :
+
+<center>![Modification de style](../../static/img/cours5/color.png)</center>
+
+### 🟦 Couleur de fond
+
+Syntaxe :
+
+```js
+document.querySelector(".classe").style.backgroundColor = "nomDeLaCouleur";
+```
+
+Exemple :
+
+<center>![Modification de style](../../static/img/cours5/backgroundColor.png)</center>
+
+### 🔳 Style, couleur et largeur de bordure
+
+Syntaxe :
+
+```js
+document.querySelector(".classe").style.borderStyle = "nomDuStyle";
+document.querySelector(".classe").style.borderColor = "nomDeLaCouleur";
+document.querySelector(".classe").style.borderWidth = "NOMBREpx";
+```
+
+Exemple :
+
+<center>![Modification de style](../../static/img/cours5/border.png)</center>
+
+Le style peut prendre les valeurs `"none"` (pas de bordure, souvent le défaut), `"solid"` (bordure pleine) et bien d'autres (voir [**ici**](https://www.w3schools.com/cssref/pr_border-style.php)) 
+
+⛔ `px` est l'unité, ici la bordure fera 20 **pixels**. Si vous oubliez l'unité, la valeur de l'attribut ne sera pas changée.
+
+### 📏 Largeur et hauteur d'un élément
+
+Syntaxe :
+
+```js
+document.querySelector(".classe").style.width = "NOMBREpx";
+document.querySelector(".classe").style.height = "NOMBREpx";
+```
+
+Exemple :
+
+<center>![Modification de style](../../static/img/cours5/size.png)</center>
+
+:::note
+
+On a modifié la taille du `<div>` qui contient l'image. (On n'a pas modifié l'`<img>` !)
+
+:::
+
+### 👻 Opacité d'un élément
+
+Syntaxe :
+
+```js
+document.querySelector(".classe").style.opacity = 0.5;
+```
+
+⛔ Il faut utiliser une valeur entre `0` et `1` pour l'opacité. (`0.5` correspond à 50% d'opacité, par exemple)
+
+Exemple :
+
+<center>![Modification de style](../../static/img/cours5/opacity.png)</center>
+
+### 🙈 Visibilité d'un élément
+
+Syntaxe pour **rendre invisible** (retirer l'élément de la page) :
+
+```js
+document.querySelector(".classe").style.display = "none";
+```
+
+Syntaxe pour **rendre visible** (réafficher l'élément dans la page) :
+
+```js
+document.querySelector(".classe").style.display = "block";
+```
+
+### 🥊 Espacement depuis la gauche / le haut
+
+Syntaxe :
+
+```js
+document.querySelector(".classe").style.left = "NOMBREpx";
+document.querySelector(".classe").style.top = "NOMBREpx";
+```
+
+Exemple :
+
+<center>![Modification de style](../../static/img/cours5/topLeft.png)</center>
+
+### 🌈 Plus de couleurs
+
+Bien qu'il existe [**140 couleurs nommées**](https://www.w3schools.com/colors/colors_names.asp) en lettres comme ceci :
+
+```js
+// "red" est une couleur qui existe :
+document.querySelector(".classe").style.color = "red";
+```
+
+On peut utiliser des couleurs encore plus précises à l'aide de leur **code héxadécimal** :
+
+```js
+document.querySelector(".classe").style.color = "#DC143C";
+```
+
+<center>![Modification de style](../../static/img/cours5/hexaColor.png)</center>
+
+### ✨ Dans une fonction
+
+Bien entendu, on peut modifier les styles dans une **fonction** :
+
+```js showLineNumbers
+function texteBleu(){
+    document.querySelector(".bouton1").style.color = "blue";
+}
+```
+
+On peut ensuite tester cette fonction avec un **écouteur d'événements** ou **directement dans la console** :
+
+<center>![Modification de style](../../static/img/cours5/testStyle.png)</center>
+
+## 🔩 DOM (récapitulatif)
+
+Jusqu'à maintenant, nous avons vu trois modifications possibles qui peuvent être réalisées sur une page Web à l'aide du **DOM** :
+
+* 📝 Manipuler le contenu textuel :
+
+```js
+document.querySelector(".classe").textContent = "Texte";
+```
+
+* 📢 Ajouter un écouteur d'événements :
+
+```js
+document.querySelector(".classe").addEventListener("type", maFonction);
+```
+
+* 🎨 Modifier les styles :
+
+```js
+document.querySelector(".classe").style.propriété = "valeur de style";
+```

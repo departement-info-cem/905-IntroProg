@@ -1,148 +1,293 @@
 ---
-title: Cours 16 - Boucles
-description: Boucles while et boucles do while
+title: Cours 16 - Planificateurs 
+description: Planificateurs et événements clavier
 ---
 
-# Cours 16 - Boucles
+# Cours 16 - Planificateurs et événements clavier
 
-Remarquez ce code plutôt répétitif :
+## ⏳ Planificateurs
 
-<center>![Répétition](../../static/img/cours16/repeating.png)</center>
+Les **planificateurs** permettent d'**appeler des fonctions** ... avec un **délai**.
 
-La seule chose qui varie entre ces lignes de code est la **classe** des éléments HTML.
+### ⌚ setTimeout
 
-On pourrait rendre le code moins répétitif avec une **fonction avec paramètre**, mais il faudrait quand même
-appeler la fonction **6 fois** !
-
-## ➰ Boucles while
-
-Les boucles permettent de **répéter** du code !
+`setTimeout` permet d'appeler une fonction **une seule fois**, dans **X millisecondes**.
 
 Syntaxe :
 
-```js showLineNumbers
-while( ... condition ... ){
-
-    // Code à répéter
-
-}
+```js
+setTimeout(maFonction, tempsEnMillisecondes);
 ```
 
-C'est un peu comme un `if`, sauf que le code à l'intérieur de la boucle va **s'exécuter à répétition tant que la condition reste `true`**.
+Exemple : ceci appelera la fonction `afficherNom()` dans `3000` millisecondes. (C'est-à-dire 3 secondes)
 
-<center>![Boucle while](../../static/img/cours16/while.png)</center>
+```js
+setTimeout(afficherNom, 3000);
+```
 
-<hr/>
+Autre exemple : afficher puis cacher une image.
 
-#### Exemple pas-à-pas
+<center>![Planificateurs](../../static/img/cours19/boo.png)</center>
 
-<center>![Boucle while](../../static/img/cours16/progress.png)</center>
+### ➰ setInterval
 
-### 💡 Quelques exemples
+`setInterval` permet d'appeler une fonction **à répétition**, toutes les **X millisecondes**.
 
-#### Exemple 1
+Syntaxe :
 
-Cette boucle fera **9 itérations**. (9 répétitions) On se sert de la variable `i` pour ajouter du **contenu textuel** :
+```js
+setInterval(maFonction, tempsEnMillisecondes);
+```
 
-<center>![Boucle while](../../static/img/cours16/while2.png)</center>
+Exemple : ceci appelera la fonction `afficherAlerte()` toutes les `3000` millisecondes. (Toutes les 3 secondes, donc)
 
-#### Exemple 2
+```js
+setInterval(afficherAlerte, 3000);
+```
 
-Cette boucle fera **4 itérations**. À chaque itération, on incrémente la variable `valeur` avec la valeur de `i`.
+Autre exemple : afficher puis cacher une image à répétition.
 
-<center>![Boucle while](../../static/img/cours16/while1.png)</center>
+<center>![Planificateurs](../../static/img/cours19/crewmate.png)</center>
 
-La valeur finale est : `10 + 1 + 2 + 3 + 4`, donc `20`.
+### 🛑 Mettre fin à un intervalle
 
-#### Exemple 3
+Il existe une fonction pour **arrêter un planificateur à intervalles** !
 
-Cette boucle fera **3 itérations**. À chaque itération, la classe `image` est ajoutée à un élément HTML.
+Syntaxe :
 
-<center>![Boucle while](../../static/img/cours16/while3.png)</center>
+```js
+clearInterval(variable_qui_contient_un_planificateur_a_intervalles);
+```
 
-### 🔨 Construire une boucle
+Voici les deux étapes à suivre pour utiliser `clearInterval()` correctement :
 
-Commencez par analyser du **code répétitif** pour **trouver les différences**.
+1. Au moment d'utiliser `setInterval()`, on doit « stocker le planificateur à intervalles » dans une **variable globale** :
 
-<center>![Répétitions](../../static/img/cours16/daenerys.png)</center>
+<center>![Planificateurs](../../static/img/cours19/clearInterval1.png)</center>
 
-La seule chose qui varie dans ces 3 lignes de code, c'est le **numéro** à la fin de la **classe**.
+2. Lorsqu'on souhaite **arrêter le planificateur**, on utilise `clearInterval()` comme ceci :
 
-On a besoin d'une boucle où la variable `i` vaudra `1`, puis `2`, puis `3`.
+<center>![Planificateurs](../../static/img/cours19/clearInterval2.png)</center>
 
-Squelette de la boucle :
+## 🐛 Conversion en nombres
 
-<center>![Boucle while](../../static/img/cours16/skeleton.png)</center>
+Les **chaînes de caractères** contiennet parfois des **nombres**.
 
-* `i` commencera à `1`. (Grâce à `let i = 1;`)
-* `i` va augmenter de `1` à chaque itération. (Grâce à `i += 1;`)
-* `i` va s'arrêter à `3`. (Grâce à `i < 4`)
+Quelques exemples : `"2"`, `"1.5"`, `"25px"`, etc.
 
-Il reste à intégrer le code et se servir de la variable `i` :
+Si on tente de les additionner sous cette forme, bien entendu, ils se **concatènent** :
 
-<center>![Boucle while](../../static/img/cours16/whileDone.png)</center>
+<center>![Concaténation](../../static/img/cours19/concatenation.png)</center>
 
-<hr/>
+Cela dit, on peut **convertir** une **chaîne de caractères** en **nombre** !
 
-En résumé :
+* On peut utiliser `parseInt( valeur )` pour convertir une **chaîne de caractères** en **nombre entier** :
 
-<center>![Boucle while](../../static/img/cours16/conversion.png)</center>
+<center>![Conversion en nombre](../../static/img/cours19/parseInt.png)</center>
+
+* On peut utiliser `parseFloat( valeur )` pour convertir une **chaîne de caractères** en **nombre à virgule** :
+
+<center>![Conversion en nombre](../../static/img/cours19/parseFloat.png)</center>
+
+Pour pouvoir additionner des nombres qui sont sous forme de **chaîne de caractères**, il faut donc commencer par les **convertir en nombre**.
+
+Exemple : Additionner `"5"` et `"2.5"` :
+
+<center>![Addition avec conversion](../../static/img/cours19/addition.png)</center>
 
 :::tip
 
-S'il y avait eu 3 images supplémentaires avec les classes `daenerys4`, `daenerys5` et `daenerys6`, il suffirait de remplacer la condition de la boucle par `i < 7`, tout simplement !
+Notez que si la chaîne de caractères est également composée de **lettres** qui suivent le **nombre**, elles seront **ignorées** :
+
+<center>![Conversion en nombre](../../static/img/cours19/ignoredLetters.png)</center>
 
 :::
 
-### 🌌 Boucles infinies
+## 👇 Événements clavier
 
-:::danger
+Il existe un **type** d'**écouteur d'événements** qui permet de détecter lorsque l'utilisateur **appuie sur une touche** du clavier.
 
-⛔ Attention ! Les boucles peuvent **figer la page Web** si elles s'exécutent à l'infini.
+### 🥚 Création de l'écouteur d'événements
+
+Comme d'habitude, on crée l'**écouteur d'événements** dans la fonction `init()` :
 
 ```js showLineNumbers
-let i = 1;
+function init(){
 
-while(i < 4){
-    console.log("Oups ! Boucle infinie.");
+    // Écouteur d'événements clavier
+    document.addEventListener("keydown", toucheClavier);
+
 }
 ```
 
-Ici, on a oublié **d'incrémenter la valeur de `i`** dans la boucle, donc `i` vaudra toujours `1` et la condition `i < 4` sera **toujours `true`** !
+:::info
+
+Remarquez que l'écouteur d'événements **n'est pas attaché à un élément HTML en particulier** ! Il est directement associé au « document », c'est-à-dire la page Web **en entier**.
 
 :::
 
-### 🧩 Exemples avancés
+### 🔍 Déterminer la touche appuyée
 
-#### Exemple 1
+Pour déterminer quelle **touche** a été appuyée par l'utilisateur lors d'un **événement clavier**, il faudra utiliser `event.key` dans la **fonction appelée par l'événement**.
 
-On peut très bien intégrer des blocs `if` (et d'autres types de blocs) dans des boucles `while` :
-
-<center>![Boucle while](../../static/img/cours16/whileIf.png)</center>
-
-#### Exemple 2
-
-Les **conditions** de nos boucles peuvent être aussi sophistiquées que nécessaire :
-
-<center>![Boucle while](../../static/img/cours16/whileAnd.png)</center>
-
-* À chaque itération, `x` augmente de `1` et `y` diminue de `2`.
-* À cause de la **condition**, dès que `x` atteindra `5` ou plus OU dès que `y` atteindra `5` ou moins, la boucle s’**arrêtera**.
-* Comme `y` diminue plus rapidement que `x` augmente, la boucle s’arrête alors que `x` respecte encore la condition, mais `y` vaut `4` et ne respecte plus la condition.
-
-## 🏁 Boucles do while
-
-Syntaxe :
+Exemple :
 
 ```js showLineNumbers
-do{
+function toucheClavier(event){
 
-    // Code à répéter
+    // On obtient et stocke la touche appuyée dans la variable touche
+    let touche = event.key;
 
-}while( ... condition ...);
+}
 ```
 
-* Très similaire à une boucle `while`, mais la **condition** est vérifiée **APRÈS chaque itération**. (Plutôt qu’avant) Cela signifie qu’il y aura forcément **au moins une itération**.
-* Avec une boucle `while`, si la condition était `false` initialement, elle n’effectuerait tout simplement **aucune itération**.
+⛔ Notez que l'ajout du paramètre `event` dans les parenthèses de la fonction est **obligatoire**.
 
-<center>![Boucle do while](../../static/img/cours16/doWhile.png)</center>
+Que contiendra la variable `touche` exactement ? Une **chaîne de caractères** qui varie selon la touche appuyée :
+
+<center>![Clavier](../../static/img/cours19/keyboard.png)</center>
+
+### 📦 Exemple complet
+
+Sachant qu'il est possible d'**appeler une fonction lorsqu'une touche est appuyée** et qu'on peut **déterminer quelle touche a été appuyée**, créons une fonction qui permet de **changer la couleur de fond d'un élément** selon la touche appuyée.
+
+<center>![Clavier](../../static/img/cours19/keydownExample.png)</center>
+
+**Étape 1** : Créer l'écouteur d'événement de type `keydown` qui appelera `changerCouleurFond()`.
+
+```js showLineNumbers
+function init(){
+
+    document.addEventListener("keydown", changerCouleurFond);
+
+}
+```
+
+**Étape 2** : Préparer la fonction `changerCouleurFond()` et **déterminer la touche appuyée**.
+
+```js showLineNumbers
+function changerCouleurFond(event){
+
+    let touche = event.key;
+
+
+}
+```
+
+**Étape 3** : Changer la couleur de fond selon la valeur de `touche`.
+
+```js showLineNumbers
+function changerCouleurFond(event){
+
+    let touche = event.key;
+    let element = document.querySelector(".bouton1");
+
+    // Si on a appuyé sur ↑
+    if(touche == "ArrowUp"){ 
+        element.style.backgroundColor = "cornflowerblue";
+    }
+
+    // Si on a appuyé sur A
+    if(touche == "a"){ 
+        element.style.backgroundColor = "crimson";
+    }
+
+    // Si on a appuyé sur Z
+    if(touche == "z"){ 
+        element.style.backgroundColor = "gold";
+    }
+
+}
+```
+
+### 👞 Déplacer un élément dans la page
+
+Disons qu'on a l'élément suivant dans la page :
+
+<center>![Citrouille](../../static/img/cours19/pumpkin.png)</center>
+
+On aimerait, lorsqu'on appuie sur la touche `"ArrowRight"`, déplacer l'image **vers la droite** dans la page.
+
+<center>![Citrouille](../../static/img/cours19/moveRight.png)</center>
+
+#### 🔽🔼 Rappel : styles `left` et `top`
+
+Les styles `left` et `top` permettent d'**espacer un élément** depuis la **gauche** et le **haut**.
+
+* `left` : nombre de pixels d'espacement **à gauche** de l'élément. (Similaire à margin-left)
+* `top` : nombre de pixels d'espacement **en haut** de l'élément. (Similaire à margin-top)
+
+<center>![Citrouille](../../static/img/cours19/leftTop.png)</center>
+
+#### 🚗 Déplacer un élément
+
+Pour changer la valeur du style `left` ou `top`, c'est plutôt *délicat*. Voici les étapes à suivre :
+
+```js showLineNumbers
+// 1 - Ranger la valeur actuelle du style left dans une variable
+let valeurLeft = document.querySelector(".pumpkin").style.left; // "0px"
+
+// 2 - Se débarrasser de "px" et ne garder qu’une valeur numérique
+valeurLeft = parseInt(valeurLeft); // "0px" devient -> 0
+
+// 3 - Augmenter ou réduire la valeur numérique
+valeurLeft += 5; // 0 devient -> 5
+
+// 4 - Changer le style left de l'élément avec la nouvelle valeur sans oublier de remettre "px" après le nombre
+document.querySelector(".pumpkin").style.left = `${valeurLeft}px`;
+```
+
+Bien entendu, pour modifier le style `top`, c'est **la même chose**. Il suffit de remplacer `left` partout par `top` !
+
+:::tip
+
+Si vous souhaitez utiliser une méthode **plus compacte**, il y a ceci :
+
+```js showLineNumbers
+let valeurLeft = document.querySelector(".pumpkin").style.left;
+document.querySelector(".pumpkin").style.left = `${parseInt(valeurLeft) + 5}px`;
+```
+
+... Ou encore cela :
+
+```js showLineNumbers
+let element = document.querySelector(".pumpkin");
+element.style.left = `${parseInt(element.style.left) + 5}px`;
+```
+
+:::
+
+#### Exemple : élément qu'on peut déplacer vers le bas et vers le haut
+
+```js showLineNumbers
+function init(){
+
+    document.addEventListener("keydown", deplacerCitrouille);
+
+}
+
+function deplacerCitrouille(event){
+
+    let touche = event.key;
+    let element = document.querySelector(".pumpkin");
+
+    if(touche == "ArrowUp"){
+        element.style.top = `${parseInt(element.style.top) - 5}px`;
+    }
+    if(touche == "ArrowDown"){
+        element.style.top = `${parseInt(element.style.top) + 5}px`;
+    }
+
+}
+```
+
+:::info
+
+Gardez à l'esprit, pour déplacer un élément ...
+
+* Vers le **haut** : Réduire la valeur de `top`
+* Vers le **bas** : Augmenter la valeur de `top`
+* Vers la **gauche** : Réduire la valeur de `left`
+* Vers la **droite** : Augmenter la valeur de `left`
+
+:::

@@ -1,8 +1,9 @@
 ---
-title: Cours 9 - TP1
-description: Temps consacré au TP1
+title: Cours 9 - Examen formatif 1
+description: Examen formatif 1
 ---
 
-# Cours 9 - TP1
+# Cours 9 - Examen formatif 1
 
-Instructions pour le TP1 : [Voir la page du TP1](/tp/tp1)
+Un examen **formatif** ne compte pas. Il sert à réviser et à se préparer à l'examen **sommatif** du cours suivant, qui lui, compte.
+

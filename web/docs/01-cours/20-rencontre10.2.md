@@ -1,8 +1,10 @@
 ---
-title: Cours 20 - TP2
-description: Temps consacré au TP2
+title: Cours 20 - Examen sommatif 2
+description: Examen sommatif 2
 ---
 
-# Cours 20 - TP2
+# Cours 20 - Examen sommatif 2
 
-Instructions pour le TP2 : [Voir la page du TP2](/tp/tp2)
+Un examen **sommatif** compte. Il sert à évaluer si les compétences des cours 2 à 18 ont bien été acquises. 
+
+Durant l'examen, vous aurez seulement accès à l'**aide-mémoire**. Bonne chance ! 🍀

@@ -1,12 +1,12 @@
 ---
-title: Cours 2 - Variables et nombres
-description: Variables, affectation et opérateurs arithmétiques
+title: Cours 2 - Variables et affectation
+description: Variables, affectation, nombres, opérateurs arithmétiques, texte et concaténation.
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Cours 2 - Variables et nombres
+# Cours 2 - Variables et affectation
 
 ## 🤓 JavaScript
 
@@ -350,3 +350,128 @@ L'ordre de priorité des opérateurs est la suivante :
 Les parenthèses permettent donc de prioriser certaines opérations. Par exemple, ci-dessous, on obtient deux résultats différents grâce aux parenthèses :
 
 <center>![Fichier avec l'extension js](../../static/img/cours2/parenthesis.png)</center>
+
+
+## 🔤 Chaînes de caractères
+
+Jusqu'ici, nous avons vu deux types de données : les **nombres entiers** et les **nombres à virgule**.
+
+```js
+let age = 17;
+let prixSalade = 4.99;
+```
+
+Il existe un autre type de données : les **chaînes de caractères** (lettres, mots, phrases, etc.)
+
+```js
+let chaine1 = "Le cours est plate.";
+let chaine2 = "Sussy";
+let chaine3 = "420 chiens chassent 69 chats.";
+```
+
+:::warning
+
+Les **chaînes de caractères** doivent toujours être encadrées par des **guillemets doubles** `"..."` ou simples `'...'`.
+
+Si on oublie les guillemets, ça ne fonctionne pas !
+
+<center>![Oublier les guillemets](../../static/img/cours3/noQuotes.png)</center>
+
+:::
+
+:::note
+
+Les deux variables ci-dessous contiennent des **valeurs complètement différentes** ! Même si `55` et `"55"` semblent identiques, `55` est un **nombre** et `"55"` est une **chaîne de caractères** composée du caractère `"5"` deux fois.
+
+```js
+let pasUnNombre = "55";
+let unNombre = 55;
+```
+
+> Qu'est-ce que ça change ?
+
+Si on tente de faire des opérations mathématiques avec la variable `pasUnNombre`, on risque d'avoir des surprises :
+
+<center>![Nombre en chaîne](../../static/img/cours3/stringNumber1.png) ![Nombre en chaîne](../../static/img/cours3/stringNumber2.png)</center>
+
+:::
+
+## 🧱 Concaténation
+
+### 🧰 Opérateur `+`
+
+L'opérateur `+` fonctionnement différemment dès qu'une donnée de type **chaîne de caractères** fait partie de l'équation :
+
+<table>
+<tr>
+<td>
+<center>![Nombre + nombre](../../static/img/cours3/numberPlusNumber.png)</center>
+Si on additionne deux **nombres**, une opération mathématique est faite.
+</td>
+<td>
+<center>![Chaîne de caractères + chaîne de caractères](../../static/img/cours3/stringPlusString.png)</center>
+Si on additionne deux **chaînes de caractères**, les deux valeurs sont tout simplement **⛔ concaténées** l’une à la suite de l’autre pour former une nouvelle **chaîne de caractères**.
+</td>
+<td>
+<center>![Nombre + chaîne de caractères](../../static/img/cours3/numberPlusString1.png) ![Nombre + chaîne de caractères](../../static/img/cours3/numberPlusString2.png)</center>
+Si on additionne un **nombre** avec une **chaîne de caractères**, le **nombre** est automatiquement converti en **chaîne de caractères** (les deux sont donc **⛔ concaténés**).
+</td>
+
+</tr>
+</table>
+
+### 🔩 Littéraux de gabarits (template strings)
+
+Les **littéraux de gabarits** permettent entre autres de glisser la valeur d'une variable dans une **chaîne de caractères**.
+
+<center>![Template string](../../static/img/cours3/templateString1.png)</center>
+
+Dans l'exemple ci-dessus, la variable `nb` a été **remplacée** par sa valeur, c'est-à-dire `5`. Remarquez que `nb` est encadrée par `${ ... }` : ça permet de dire à JavaScript « remplace la variable par la valeur qu'elle contient ».
+
+#### 📝 Construire un template string
+
+Pour utiliser les **littéraux de gabarits**, il y a deux étapes simples à suivre :
+
+1. Remplacer les **guillemets** `"..."` autour de la chaîne de caractères par des **accents graves** `` `...` ``
+
+<center>![Template string](../../static/img/cours3/templateStep1.png)</center>
+
+2. Encadrer les noms de variable avec `${...}` :
+
+<center>![Template string](../../static/img/cours3/templateStep2.png)</center>
+
+<center>![Template string](../../static/img/cours3/templateResult.png)</center>
+
+:::tip
+
+Un **template string** peut contenir plusieurs variables :
+
+<center>![Template string](../../static/img/cours3/twoVariables.png)</center>
+
+Un **template string** peut contenir des calculs :
+
+<center>![Template string](../../static/img/cours3/calculation.png)</center>
+
+:::
+
+### 🧰 Opérateur `+=`
+
+Pour rappel, l'opérateur `+=` permet d'**augmenter (incrémenter)** la valeur d'une variable.
+
+<center>`x` valait `4`, maintenant ça vaut `7` :</center>
+
+<center>![Incrémentation](../../static/img/cours3/plusEqualNumber.png)</center>
+<br/>
+<center>`y` valait `7`, maintenant ça vaut `13` :</center>
+
+<center>![Incrémentation de texte](../../static/img/cours3/plusEqualNumber2.png)</center>
+<br/>
+Cela dit, avec des **chaînes de caractères**, cela **ajoute du texte à la fin de la chaîne**.
+
+<center>`mot` contenait `"caca"`, maintenant ça contient `"cacahuète"`, car on a **ajouté** `"huète"` à la fin :</center>
+
+<center>![Incrémentation de texte](../../static/img/cours3/poopPeanut.png)</center>
+
+Voici d'autres exemples :
+
+<center>![Incrémentation de texte](../../static/img/cours3/plusEqualExamples.png)</center>
