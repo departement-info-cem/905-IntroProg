@@ -58,13 +58,14 @@ La valeur finale est : `10 + 1 + 2 + 3 + 4`, donc `20`.
 
 Cette boucle fera **3 itérations**. À chaque itération, la classe `image` est ajoutée à un élément HTML.
 
-<center>![Boucle while](../../static/img/cours16/while3.png)</center>
+<center>![Boucle while](../../static/img/cours16/whileEx.png)</center>
+<center>![Boucle while](../../static/img/cours16/bobWhile.png)</center>
 
 ### 🔨 Construire une boucle
 
 Commencez par analyser du **code répétitif** pour **trouver les différences**.
 
-<center>![Répétitions](../../static/img/cours16/daenerys.png)</center>
+<center>![Répétitions](../../static/img/cours16/buildLoop1.png)</center>
 
 La seule chose qui varie dans ces 3 lignes de code, c'est le **numéro** à la fin de la **classe**.
 
@@ -80,17 +81,17 @@ Squelette de la boucle :
 
 Il reste à intégrer le code et se servir de la variable `i` :
 
-<center>![Boucle while](../../static/img/cours16/whileDone.png)</center>
+<center>![Boucle while](../../static/img/cours16/whileEx.png)</center>
 
 <hr/>
 
 En résumé :
 
-<center>![Boucle while](../../static/img/cours16/conversion.png)</center>
+<center>![Boucle while](../../static/img/cours16/buildLoop2.png)</center>
 
 :::tip
 
-S'il y avait eu 3 images supplémentaires avec les classes `daenerys4`, `daenerys5` et `daenerys6`, il suffirait de remplacer la condition de la boucle par `i < 7`, tout simplement !
+S'il y avait eu 3 images supplémentaires avec les classes `bob4`, `bob5` et `bob6`, il suffirait de remplacer la condition de la boucle par `i < 7`, tout simplement !
 
 :::
 
