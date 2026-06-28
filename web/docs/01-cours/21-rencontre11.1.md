@@ -195,3 +195,121 @@ function afficherTexte(event){
     console.log(event.currentTarget.textContent);
 }
 ```
+
+## 📢 Écouteurs d'événements avec paramètres
+
+Pour le moment, nous n'étions pas capables de **passer des paramètres** à une fonction appelée par un écouteur d'événements.
+
+:::warning
+
+⛔ Ceci **ne fonctionne pas** :
+
+```js showLineNumbers
+function init(){
+
+    document.querySelector(".bouton1").addEventListener("click", changerCouleur("crimson"));
+
+}
+```
+
+✅ Nous sommes obligés d'écrire le nom de la fonction **sans paramètre ni parenthèses** dans un écouteur d'événements :
+
+```js showLineNumbers
+function init(){
+
+    document.querySelector(".bouton1").addEventListener("click", changerCouleur);
+
+}
+```
+
+:::
+
+Il existe toutefois un *stratagème* pour contourner cette contrainte :
+
+```js
+document.querySelector(".bouton1").addEventListener("click", function(){ changerCouleur("crimson") });
+```
+
+Remarquez qu'on a glissé l'appel de `changerCouleur("crimson")` dans un bloc `function(){ ... }`.
+
+Il n'est pas nécessaire de comprendre à 100% ce stratagème (tant que vous êtes capables de l'utiliser !), mais en gros, `function() { ... }` est une **fonction anonyme** (une fonction qui n'a pas de nom et donc qui ne peut pas être réutilisée) et on peut mettre le bloc de code de notre choix à l'intérieur. (Dans ce cas-ci, un appel de fonction avec **paramètre(s)**)
+
+Bref, dans ce cas-ci, **cliquer** sur l'élément `.bouton1` appelle une **fonction anonyme** qui appelle `changerCouleur("crimson")` 😵
+
+### ✨ Exemple de simplification du code
+
+Voici un exemple où ce *stratagème* est utilisé pour simplifier du code.
+
+Avant :
+
+```js showLineNumbers
+function init(){
+
+    document.querySelector(".bouton1").addEventListener("click", changerCouleurBleu);
+    document.querySelector(".bouton2").addEventListener("click", changerCouleurRouge);
+
+}
+
+function changerCouleurBleu(){
+    changerCouleur("blue");
+}
+
+function changerCouleurRouge(){
+    changerCouleur("red");
+}
+
+function changerCouleur(couleur){
+    document.querySelector(".texte").style.color = couleur;
+}
+```
+
+Remarquez que les fonctions `changerCouleurBleu()` et `changerCouleurRouge()` servent juste à faire le **pont** entre un écouteur d'événement et la fonction `changerCouleur()` pour passer un **paramètre**. Remédions-y.
+
+Après :
+
+```js showLineNumbers
+function init(){
+
+    document.querySelector(".bouton1").addEventListener("click", function(){ changerCouleur("blue") });
+    document.querySelector(".bouton2").addEventListener("click", function(){ changerCouleur("red") });
+
+}
+
+function changerCouleur(couleur){
+    document.querySelector(".texte").style.color = couleur;
+}
+```
+
+## 👬 eventTarget + paramètres
+
+Si jamais on souhaitait utiliser `event.currentTarget` ET un ou plusieurs paramètres dans un écouteur d'événements simultanément, il faudrait s'y prendre comme ceci :
+
+```js showLineNumbers
+let gValeur = 6;
+
+function init(){
+
+    // La « fonction anonyme » envoie le paramètre event à la fonction changerValeur()
+    document.querySelector(".bouton1").addEventListener("click", function(event){ changerValeur(event, 7) });
+
+}
+
+function changerValeur(event, valeur){
+
+    gValeur = valeur;
+    event.currentTarget.style.backgroundColor = "gold";
+
+}
+```
+
+:::info
+
+Bien entendu, on peut glisser autant de paramètres qu'on veut dans la fonction :
+
+```js
+function changerValeur(event, valeur1, valeur2, valeur3){
+    // ...
+}
+```
+
+:::
