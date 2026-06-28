@@ -68,6 +68,26 @@ Il faut fournir **un paramètre** : l'**index** du caractère souhaité.
 
 <center>![Fonctions textuelles](../../static/img/cours24/charAt.png)</center>
 
+:::warning
+
+Attention ! Quand on utilise une fonction textuelle, ça **ne modifie pas** une variable ! Ça **retourne** simplement un nouveau texte.
+
+Exemple :
+
+```js showLineNumbers
+let x = "chapeau";
+let y = x.substring(3, 7);
+```
+
+`x` contient **encore** `"chapeau"`. Cela dit, `y` contient `"peau"`. Si j'avais souhaité que `x` change, j'aurais fait ceci :
+
+```js showLineNumbers
+let x = "chapeau";
+x = x.substring(3, 7); // x passe de "chapeau" à "peau".
+```
+
+:::
+
 ## 🧮 Fonctions mathématiques
 
 ### ⚪ Arrondir
