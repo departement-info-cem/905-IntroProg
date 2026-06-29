@@ -5,63 +5,361 @@ description: Bonnes pratiques de base, commenter ses fonctions et apprendre d'au
 
 # Cours 26 - Code propre
 
-## 📜 Commenter ses fonctions
+Saviez-vous que votre code est parfois *crotté* ? Nous allons y remédier en abordant quelques stratégies et habitudes très simples qui vous aideront ne plus avoir certains défauts ou maladresses dans votre code qui sont généralement évités dans un cadre professionnel. 
 
-Nous connaissons les **commentaires** (`// ... `) depuis la séance 4, mais nous ne les avons jamais rédigés nous-mêmes.
+## ⚖ Choisir les bons blocs
 
-Pendant le TP3, vous devrez créer vos propres fonctions et vous devrez les ... **commenter** !
+Nous avons vu les `if`, `else`, `else if`, `switch`, `while`, `do wfile`, `for` et les **conditions ternaires**.
 
-:::warning
+Certains de ces blocs sont très similaires, voir interchangeables pour quelques situations. Cela dit, dans certains cas, le choix du bloc peut devenir évident car il est plus élégant et / ou lisible.
 
-Lorsqu’on crée du code, c’est important de le commenter (le décrire) pour que nos collègues puissent comprendre et naviguer facilement notre travail.
+### ❓ Conditions
+
+Lorsqu'on a **plusieurs blocs conditionnels exclusifs** (donc qu'on veut juste utiliser l'un deux) et que les conditions utilisent uniquement l'opérateur `==`, il faut miser sur un bloc `switch`.
+
+🚫 À éviter :
+
+```js showLineNumbers
+if(x == 5){
+    // ...
+}
+else if(x == 6 || x == 7){
+    // ...
+}
+else if(x == 8){
+    // ...
+}
+else{
+    // ...
+}
+```
+
+✅ À favoriser :
+
+```js showLineNumbers
+switch(x){
+    case 5 : /* ... */ break;
+    case 6 :
+    case 7 : /* ... */ break;
+    case 8 : /* ... */ break;
+    default : /* ... */
+}
+```
+
+Lorsqu'on a seulement un `if ... else` qui sert à **choisir une valeur** ou faire une opération similaire avec une valeur différente, il vaut mieux favoriser les **conditions ternaires**.
+
+🚫 À éviter :
+
+```js showLineNumbers
+let x = null;
+
+if(gActif == true){
+    x = 5;
+}
+else{
+    x = 0;
+}
+
+if(gChrono > 0){
+    document.querySelector(".jeu").style.display = "block";
+}
+else{
+    document.querySelector(".jeu").style.display = "none";
+}
+```
+
+✅ À favoriser :
+
+```js showLineNumbers
+let x = gActif == true ? 5 : 0;
+
+document.querySelector(".jeu").style.display = gChrono > 0 ? "block" : "none";
+```
+
+### ➰ Boucles
+
+Nous avons vu trois types de boucles. Elles sont souvent *interchangeables*, mais on peut quand même les favoriser selon la situation :
+
+* `for` : (95% des cas) On sait d'avance **combien** il y aura d'itérations. (Ex : tableau, calculer une somme, parcourir des éléments HTML, etc.)
+* `while` : Dès que le nombre d'itérations est moins évident ou que la condition n'est pas numérique.
+* `do while` : (rare) Comme pour `while`, mais on veut garantir qu'il y aura au moins **UNE** itération.
+
+✅ Parcourir un tableau avec `for` :
+
+```js showLineNumbers
+for(let i = 0; i < monTableau.length; i++){
+    console.log(monTableau[i]);
+}
+```
+
+:::info
+Pour rappel, `i++` est équivalent à `i += 1`. L'usage de `i++` est plus commun si on souhaite seulement **incrémenter de 1**.
+:::
+
+✅ Faire une opération avec une condition moins évidente ou non numérique avec `while`:
+
+```js showLineNumbers
+while(x > 10 && gPlein == false){
+
+    x -= 1;
+    y += 1;
+
+    if(y >= 20){
+        gPlein = true;
+    }
+
+}
+```
+
+## 🔁 Éviter les répétitions
+
+Au risque de vous surprendre, nous n'aimons pas la répétition en programmation. Ça rend le code plus dense et complexe sans lui ajouter de valeur. Révisons quelques stratégies pour se débarrasser de code répétitif.
+
+### ➰ Boucles
+
+Les boucles existent carrément pour répéter des choses, alors leur cas d'usage devrait être assez évident.
+
+⛔ À éviter :
+
+```js showLineNumbers
+document.querySelector(".case1").style.color = "crimson";
+document.querySelector(".case2").style.color = "crimson";
+document.querySelector(".case3").style.color = "crimson";
+document.querySelector(".case4").style.color = "crimson";
+
+console.log(monTableau[0]);
+console.log(monTableau[1]);
+console.log(monTableau[2]);
+console.log(monTableau[3]);
+console.log(monTableau[4]);
+```
+
+✅ À favoriser :
+
+```js showLineNumbers
+for(let i = 1; i < 5; i++){
+    document.querySelector(`.case${i}`).style.color = "crimson";
+}
+
+for(let i = 0; i < monTableau.length; i++){
+    console.log(monTableau[i]);
+}
+```
+
+### ⚙ Fonctions
+
+Parfois, le code répétitif est moins adapté pour une boucle et / ou est présent à deux endroits indépendants. Dans ce cas, les fonctions sont un outil intéressant. N'hésitez pas à exploiter les **paramètres** s'il y a des petites différences dans le code répétitif.
+
+⛔ À éviter (code répétitif dans deux fonctions) :
+
+```js showLineNumbers
+function a(){
+
+    if(gActif == true){
+
+        gActif = false; // 😠
+        document.querySelector(".bouton").style.display = "none"; // 😠
+        alert("Partie perdue !"); // 😠
+        gScore = 0;
+        gChrono = 0; // 😠
+
+    }
+
+}
+
+function b(){
+
+    if(gScore > gMeilleurScore){
+        gMeilleurScore = gScore;
+    }
+    gActif = false; // 😠
+    document.querySelector(".bouton").style.display = "none"; // 😠
+    alert("Victoire !"); // 😠
+    gChrono = 0; // 😠
+
+}
+```
+
+Certains morceaux se ressemblent beaucoup dans `a()` et `b()`. Tentons de les unir dans une nouvelle fonction. Bien entendu, certains morceaux qui n'étaient pas répétitifs seront conservés dans `a()` et `b()`.
+
+✅ À favoriser :
+
+```js showLineNumbers
+function a(){
+
+    if(gActif == true){
+
+        gScore = 0;
+        c("Partie perdue !");
+
+    }
+
+}
+
+function b(){
+
+    if(gScore > gMeilleurScore){
+        gMeilleurScore = gScore;
+    }
+    c("Victoire !");
+
+}
+
+function c(message){
+
+    gActif = false;
+    document.querySelector(".bouton").style.display = "none";
+    alert(message);
+    gChrono = 0;
+
+}
+```
+
+### ❓ Conditions
+
+Les blocs conditionnels ne sont pas faits pour répéter du code, alors si justement vous remarquez du code répétitif, tentez de le réunir.
+
+⛔ À éviter :
+
+```js showLineNumbers
+if(x < 0){
+    x = 0;
+    console.log(x);
+}
+else if(x > 100){
+    x = x / 2;
+    console.log(x);
+}
+else{
+    console.log(x);
+}
+```
+
+✅ À favoriser :
+
+```js showLineNumbers
+if(x < 0){
+    x = 0;
+}
+else if(x > 100){
+    x = x / 2;
+}
+
+console.log(x); // On exécute cette ligne dans tous les cas, à la fin.
+```
+
+## 👶 Simplification de booléens
+
+À partir de maintenant, il est **interdit** 🚔 d'utiliser `== true` dans une condition !
+
+⛔ À éviter :
+
+```js showLineNumbers
+if(gActif == true){
+    x += 5;
+}
+```
+
+Si `gActif` vaut `true`, utiliser `if(gActif)` fait exactement le même travail.
+
+:::tip
+
+Truc simple : vous pouvez commencer par écrire votre code avec `== true` si ça vous aide à comprendre, mais vous pouvez systématiquement retirer le `== true` par la suite sans impact sur le fonctionnement du code. C'est promis !
 
 :::
 
-**Lignes directrices :**
+Tentez également de simplifier votre code si un `if ... else` sert juste à choisir un **booléen**.
 
-* Décrire brièvement l’**utilité** de la fonction. (⛔ Sans entrer dans des détails trop techniques)
-* Si la fonction reçoit des **paramètres**, que représentent-ils ?
-* Si la fonction **retourne** une **valeur**, que représente-t-elle ?
+⛔ À éviter :
 
-### ✅ Bons exemples
+```js showLineNumbers
+function partieEnCours(){
 
-<center>![Commentaire de fonction](../../static/img/cours24/comment1.png)</center>
+    if(gChrono > 0){
+        return true;
+    }
+    else{
+        return false;
+    }
 
-<center>![Commentaire de fonction](../../static/img/cours24/comment2.png)</center>
+}
+```
 
-<center>![Commentaire de fonction](../../static/img/cours24/comment3.png)</center>
+✅ À favoriser :
 
-### ❌ Mauvais exemples
+```js showLineNumbers
+function partieEnCours(){
 
-Ci-dessous, les commentaires **décrivent TROP en détails les lignes de code** plutôt que de **résumer rapidement et clairement en français** les fonctions :
+    return gChrono > 0; // sera true ou false. Même fonctionnement !
 
-<center>![Commentaire de fonction](../../static/img/cours24/comment4.png)</center>
+}
+```
 
-<center>![Commentaire de fonction](../../static/img/cours24/comment5.png)</center>
+## ✨ Autres détails 
 
-<hr/>
+1. N'oubliez pas vos **points-virgules** `;`
 
-Ci-dessous, on oublie de parler des **paramètres** :
+```js showLineNumbers
+// 😠
+let x = 2
+console.log(x)
+x += 1;
+```
 
-<center>![Commentaire de fonction](../../static/img/cours24/comment6.png)</center>
+:::info
 
-<hr/>
+Bien qu'en JavaScript, oublier les points-virgules pose seulement problème dans deux scénarios très peu communs (plusieurs instructions sur la même ligne + prochaine ligne qui commence par `(` ou `[`), insérer un `;` à la fin d'une instruction est obligatoire dans de nombreux langages comme `C`, `C++`, `C#`, `Java`, etc. Alors c'est une bonne habitude à adopter dès maintenant.
 
-Ci-dessous, on oublie de parler de la **valeur retournée** :
+:::
 
-<center>![Commentaire de fonction](../../static/img/cours24/comment7.png)</center>
+2. Soignez vos **indentations** et **sauts de ligne**
 
-## 📚 Apprendre d'autres langages
+```js showLineNumbers
+// 💀
+function partieEnCours(){ if(
+gChrono > 0)
+{   
+    return true; } else
+    { return false; }
+    }
 
-<center>![Autres langages](../../static/img/cours26/langages.png)</center>
+// 😇
+function partieEnCours(){ 
+    if(gChrono > 0){   
+        return true; 
+    } 
+    else{ 
+        return false; 
+    }
+}
+```
 
-Bien que nous ayons appris beaucoup de notions en **JavaScript**, nous n’avons vu **que les bases** ! 👶 Si vous explorez d’autres langages, vous rencontrerez plusieurs nouvelles notions qui ne vous seront pas familières.
+:::tip
 
-Malgré tout, n’ayez pas peur d’apprendre d’autres langages dès maintenant !
-* Il faut apprendre le langage **C++** pour exploiter **Unreal Engine** en profondeur.
-* Il faut apprendre **Kotlin**, **Java** ou autre pour faire des applications Android.
-* Il faut apprendre **C#**, **Java**, **Python**, **PHP** ou autre pour faire un serveur Web à partir de zéro.
-* Il faut apprendre **SQL** pour exploiter les bases de données relationnelles soi-même.
-* etc !
+Rappel : `shift` + `alt` + `f` est votre ami(e).
 
-Selon les types de projets qui vous intéressent, il y a beaucoup à apprendre. Dans l'univers TIM, vous n'aurez cela dit pas besoin d'apprendre beaucoup de langages de programmation 🥳
+:::
+
+3. Faites preuve de constance / régularité pour vos **espaces**
+
+```js showLineNumbers
+// 😵
+let x= 1+ 3 *  5/ 9-  11;
+
+// 🗿
+let x = 1 + 3 * 5 / 9 - 11;
+```
+
+4. N'oubliez pas d'utiliser des **noms significatifs** pour vos variables
+
+```js showLineNumbers
+// 🚫
+let skibidi = "brainrot";
+let abc = 5;
+let zgouibidou = false;
+
+// 👌
+let categorie = "brainrot";
+let nbAmis = 5;
+let jeuActif = false;
+```
