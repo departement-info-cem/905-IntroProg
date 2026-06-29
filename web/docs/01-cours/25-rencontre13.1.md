@@ -215,6 +215,12 @@ function c(message){
 }
 ```
 
+:::note
+
+N'oubliez pas qu'en plus des **paramètres**, utiliser `event.currentTarget` et des **paramètres dans les écouteurs d'événements** permet aussi d'éviter certaines répétitions. (Seulement si le code est appeler par un écouteur d'événements, bien entendu)
+
+:::
+
 ### ❓ Conditions
 
 Les blocs conditionnels ne sont pas faits pour répéter du code, alors si justement vous remarquez du code répétitif, tentez de le réunir.
