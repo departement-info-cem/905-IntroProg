@@ -39,6 +39,11 @@ Ci-dessous, les commentaires **décrivent TROP en détails les lignes de code** 
 
 <center>![Commentaire de fonction](../../static/img/cours24/comment5.png)</center>
 
+De plus, éviter les formulations génériques en début de commentaire :
+
+* ❌ « La fonction lancerJeu() permet de déterminer si [...] » -> ✅ « détermine si [...] »
+* ❌ « Cette fonction modifie la valeur de [...] » -> ✅ « modifie la valeur de [...] »
+
 <hr/>
 
 Ci-dessous, on oublie de parler des **paramètres** :
