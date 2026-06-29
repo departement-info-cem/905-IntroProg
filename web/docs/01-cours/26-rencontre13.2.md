@@ -41,8 +41,12 @@ Ci-dessous, les commentaires **décrivent TROP en détails les lignes de code** 
 
 De plus, éviter les formulations génériques en début de commentaire :
 
-* ❌ « La fonction lancerJeu() permet de déterminer si [...] » -> ✅ « détermine si [...] »
-* ❌ « Cette fonction modifie la valeur de [...] » -> ✅ « modifie la valeur de [...] »
+* ❌ « La fonction `lancerJeu()` permet de déterminer si [...] »
+  * Utilisez plutôt : ✅ « Détermine si [...] »
+* ❌ « Cette fonction modifie la valeur de [...] »
+  * Utilisez plutôt : ✅ « Modifie la valeur de [...] »
+
+Bref, n'ayez pas peur de commencer votre commentaire par un **verbe**.
 
 <hr/>
 
