@@ -96,6 +96,10 @@ for(let i = 0; i < monTableau.length; i++){
 Pour rappel, `i++` est équivalent à `i += 1`. L'usage de `i++` est plus commun si on souhaite seulement **incrémenter de 1**.
 :::
 
+:::tip
+Si jamais vous remarquez que vous n'utilisez pas la variable `i` à l'intérieur de votre boucle `for`, c'est signe que `while` est peut-être un meilleur choix !
+::
+
 ✅ Faire une opération avec une condition moins évidente ou non numérique avec `while`:
 
 ```js showLineNumbers
