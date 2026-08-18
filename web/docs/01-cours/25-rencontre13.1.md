@@ -3,7 +3,7 @@ title: Cours 26 - Code propre
 description: Bonnes pratiques de base, commenter ses fonctions et apprendre d'autres langages
 ---
 
-# Cours 26 - Code propre
+# Cours 25 - Code propre
 
 Saviez-vous que votre code est parfois *crotté* ? Nous allons y remédier en abordant quelques stratégies et habitudes très simples qui vous aideront ne plus avoir certains défauts ou maladresses dans votre code qui sont généralement évités dans un cadre professionnel. 
 
