@@ -1,5 +1,5 @@
 ---
-title: Cours 26 - Code propre
+title: Cours 25 - Code propre
 description: Bonnes pratiques de base, commenter ses fonctions et apprendre d'autres langages
 ---
 
