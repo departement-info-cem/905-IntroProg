@@ -7,6 +7,29 @@ description: Bonnes pratiques de base, commenter ses fonctions et apprendre d'au
 
 Saviez-vous que votre code est parfois *crotté* ? Nous allons y remédier en abordant quelques stratégies et habitudes très simples qui vous aideront ne plus avoir certains défauts ou maladresses dans votre code qui sont généralement évités dans un cadre professionnel. 
 
+## 🛡 Constantes
+
+Il existe une autre manière de déclarer une « variable » : déclarer une **constante** !
+
+```js showLineNumbers
+const nomCategorie = "brain rot"; 
+```
+
+On peut utiliser sa valeur pour réaliser des opérations, comme pour une **variable**, sauf qu'**on ne peut pas modifier la valeur** d'une **constante** :
+
+<center>![Constante](../../static/img/cours25/const.png)</center>
+<center>![Constante](../../static/img/cours25/const2.png)</center>
+
+:::warning
+
+À partir de maintenant, pour toutes les variables **qui ne sont jamais censées changer de valeur**, déclarez les plutôt comme **constantes**.
+
+💡 Avantages :
+* Si vous tentez de modifier la valeur d'une constante par maladresse, une erreur sera rapidement affichée et cela évitera des bogues plus subtils.
+* Vos collègues comprendront plus facilement l'intention de ne pas modifier certaines valeurs.
+
+:::
+
 ## ⚖ Choisir les bons blocs
 
 Nous avons vu les `if`, `else`, `else if`, `switch`, `while`, `do wfile`, `for` et les **conditions ternaires**.
