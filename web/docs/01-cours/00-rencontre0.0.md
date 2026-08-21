@@ -83,6 +83,7 @@ let phrase2 = `${qte} ${article} coûtent ${qte * prix} dollars.`;
 // phrase2 contient "3 rhododendron coûtent 11.97 dollars."
 ```
 
+<!--
 ### ⚙️ Fonctions
 
 ```js showLineNumbers
@@ -525,3 +526,4 @@ let z = parseInt("25");
 let x = parseFloat("25.15px");
 let y = parseFloat("25.15");
 ```
+-->
