@@ -41,11 +41,11 @@ Léa est une plateforme accessible via Omnivox pour accéder aux notes de cours,
 
 Teams est une plateforme plus conviviale pour communiquer avec ses enseignants. (Comparé à Mio, qui ressemble plus à un système de courriels) En TIM, certains cours sont représentés par une **équipe Teams** où les notes de cours (et parfois les devoirs) seront disponibles.
 
-⚗ Démo générale :
+⚗ Démo :
 
 * Envoyer un message à un(e) enseignant(e) (À prioriser plutôt que les Mios !)
-* Accéder aux notes de cours (ex : fichier `.txt` avec le lien vers ce site)
-* Remises de travaux
+* Accéder aux notes de cours.
+* Remises de travaux.
 
 🧪 Activité :
 
