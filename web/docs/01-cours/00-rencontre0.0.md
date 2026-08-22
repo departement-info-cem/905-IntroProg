@@ -58,13 +58,22 @@ let prixTotal = 1.99 * 3;
     </tr>
     <tr>
         <td><center>`+=`</center></td>
-        <td>`maVariable += 3`</td>
-        <td>La valeur de `maVariable` est **augmentée** de 3</td>
+        <td>`maVariable += 3;`</td>
+        <td>La valeur de `maVariable` est **incrémentée** de 3</td>
     </tr>
     <tr>
         <td><center>`-=`</center></td>
-        <td>`maVariable -= 2`</td>
-        <td>La valeur de `maVariable` est **réduite** de 2</td>
+        <td>`maVariable -= 2;`</td>
+        <td>La valeur de `maVariable` est **décrémentée** de 2</td>
+    </tr>
+    <tr>
+        <td><center>`++`</center></td>
+        <td>`maVariable++;`</td>
+        <td>La valeur de `maVariable` est **incrémentée** de 1</td>
+    </tr><tr>
+        <td><center>`--`</center></td>
+        <td>`maVariable--;`</td>
+        <td>La valeur de `maVariable` est **décrémentée** de 1</td>
     </tr>
 </table>
 
