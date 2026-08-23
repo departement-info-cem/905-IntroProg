@@ -1,4 +1,6 @@
-# TP3 - Maimouare 🃏🧠
+# TP3 
+<!--
+- Maimouare 🃏🧠
 
 📦 Projet de départ : [Téléchargement](../../static/files/tp3_jeu1.zip)
 
@@ -141,3 +143,4 @@ Vous devrez coder tout le reste de la logique du jeu sans trop d’encadrement. 
 </table>
 
 \* Utilisez les if, else if, else, switch, while, for et conditions ternaires de manière stratégique et élégante.
+-->

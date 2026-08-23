@@ -1,4 +1,6 @@
-# TP3 - Bonhomme tendu 😬🪢
+# TP3
+<!--
+ - Bonhomme tendu 😬🪢
 
 📦 Projet de départ : [Téléchargement](../../static/files/tp3_jeu3.zip)
 
@@ -133,3 +135,4 @@ Vous devrez coder tout le reste de la logique du jeu sans trop d’encadrement. 
 </table>
 
 \* Utilisez les if, else if, else, switch, while, for et conditions ternaires de manière stratégique et élégante.
+-->

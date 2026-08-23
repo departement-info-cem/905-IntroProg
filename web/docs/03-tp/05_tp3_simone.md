@@ -1,4 +1,6 @@
-# TP3 - Simone 💁‍♀️💡
+# TP3 
+<!--
+- Simone 💁‍♀️💡
 
 📦 Projet de départ : [Téléchargement](../../static/files/tp3_jeu2.zip)
 
@@ -128,3 +130,4 @@ N’ayez pas peur d’utiliser `setTimeout()` à profusion ! C’est très utile
 </table>
 
 \* Utilisez les if, else if, else, switch, while, for et conditions ternaires de manière stratégique et élégante.
+-->
