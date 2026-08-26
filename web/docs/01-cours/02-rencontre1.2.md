@@ -189,7 +189,7 @@ let triangle = 3, carre = 4, pentagone = 5;
 
 :::
 
-Notez qu'on peut utiliser l'opérateur `=` sur une variable qui **contient déjà une valeur** pour la **remplacer.
+Notez qu'on peut utiliser l'opérateur `=` sur une variable qui **contient déjà une valeur** pour la **remplacer**.
 
 Par exemple, à la fin de ces lignes de code, la variable `prix` contiendra `50` plutôt que `40` :
 
