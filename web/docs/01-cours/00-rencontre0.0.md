@@ -92,7 +92,7 @@ let phrase2 = `${qte} ${article} coûtent ${qte * prix} dollars.`;
 // phrase2 contient "3 rhododendron coûtent 11.97 dollars."
 ```
 
-<!--
+
 ### ⚙️ Fonctions
 
 ```js showLineNumbers
@@ -102,7 +102,7 @@ function nomDeLaFonction(){
 
 }
 ```
-
+<!--
 ### ⚙️🎨 Fonctions avec paramètres
 
 ```js showLineNumbers
@@ -133,6 +133,7 @@ function valeursEgales(nombre1, nombre2){
 // Ex : la variable x contiendra false
 let x = valeursEgales(2, 4);
 ```
+-->
 
 ### ⚙️✅ Fonctions préexistantes
 
@@ -143,6 +144,8 @@ alert("Skbidi");
 // Affiche un message dans la console du navigateur
 console.log("Natacha n'attache pas ses chats");
 ```
+
+<!--
 ### ⚙️📝 Fonctions textuelles
 
 ```js
@@ -382,6 +385,7 @@ while(i < monTableau.length){
 
 }
 ```
+-->
 
 ### 💻 DOM
 
@@ -395,6 +399,7 @@ let texte = document.querySelector(".classe").textContent;
 document.querySelector(".classe").textContent = "Nouveau texte";
 ```
 
+<!--
 👂 Ajouter un écouteur d'événements pour un élément spécifique (Généralement dans `init()`) Les types d'événements utilisés dans ce cours sont `"click"`, `"mouseover"`, `"mouseleave"` et `"mouseout"`.
 ```js
 document.querySelector(".classe").addEventListener("type", nomFonction);
