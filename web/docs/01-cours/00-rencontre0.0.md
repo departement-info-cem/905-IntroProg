@@ -196,6 +196,7 @@ Math.random() * 5; // 0 à 5 ex.: 3.0958
 5 + Math.random() * 10; // 5 à 15 ex.: 8.78432
 1 + Math.floor(Math.random() * 5) // 1, 2, 3, 4, 5, 6
 ```
+-->
 
 ### ⚖️ Opérateurs de comparaison
 
@@ -237,6 +238,7 @@ Math.random() * 5; // 0 à 5 ex.: 3.0958
     </tr>
 </table>
 
+<!--
 ### ⚖️⚖️ Opérateurs logiques
 
 <table>
@@ -256,7 +258,7 @@ Math.random() * 5; // 0 à 5 ex.: 3.0958
         <td>`a` est différent de `b` OU `a` est plus petit que `10` ?</td>
     </tr>
 </table>
-
+-->
 ### ❓ Conditions
 
 ```js showLineNumbers
@@ -279,7 +281,7 @@ else{
 
 }
 ```
-
+<!--
 ```js showLineNumbers
 if( ... condition 1 ... ){
 
@@ -399,7 +401,7 @@ let texte = document.querySelector(".classe").textContent;
 document.querySelector(".classe").textContent = "Nouveau texte";
 ```
 
-👂 Ajouter un écouteur d'événements pour un élément spécifique (Généralement dans `init()`) Les types d'événements utilisés dans ce cours sont `"click"`, `"mouseover"`, `"mouseleave"` et `"mouseout"`.
+👂 Ajouter un écouteur d'événements pour un élément spécifique (Généralement dans `init()`) Les types d'événements utilisés dans ce cours sont `"click"`, `"mouseover"` et `"mouseout"`.
 ```js
 document.querySelector(".classe").addEventListener("type", nomFonction);
 ```
