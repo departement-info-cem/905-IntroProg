@@ -238,7 +238,6 @@ Math.random() * 5; // 0 à 5 ex.: 3.0958
     </tr>
 </table>
 
-<!--
 ### ⚖️⚖️ Opérateurs logiques
 
 <table>
@@ -258,7 +257,7 @@ Math.random() * 5; // 0 à 5 ex.: 3.0958
         <td>`a` est différent de `b` OU `a` est plus petit que `10` ?</td>
     </tr>
 </table>
--->
+
 ### ❓ Conditions
 
 ```js showLineNumbers
@@ -281,7 +280,7 @@ else{
 
 }
 ```
-<!--
+
 ```js showLineNumbers
 if( ... condition 1 ... ){
 
@@ -300,6 +299,7 @@ else{
 }
 ```
 
+<!--
 ```js showLineNumbers
 switch(/* la valeur à comparer */){
     case /* première valeur possible */ : /* ... code ... */ ; break;
