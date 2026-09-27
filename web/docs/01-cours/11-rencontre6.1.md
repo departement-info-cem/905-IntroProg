@@ -9,10 +9,7 @@ Remarquez ce code plutôt répétitif :
 
 <center>![Répétition](../../static/img/cours16/repeating.png)</center>
 
-La seule chose qui varie entre ces lignes de code est la **classe** des éléments HTML.
-
-On pourrait rendre le code moins répétitif avec une **fonction avec paramètre**, mais il faudrait quand même
-appeler la fonction **6 fois** !
+La seule chose qui varie entre ces lignes de code est la **classe** des éléments HTML...
 
 ## ➰ Boucles while
 
