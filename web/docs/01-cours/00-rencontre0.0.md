@@ -311,7 +311,7 @@ switch(/* la valeur à comparer */){
 
 ```js showLineNumbers
 let maVariable = condition ? valeur_si_vrai : valeur_si_faux;
-```
+```-->
 
 ### ➰ Boucles
 
@@ -331,6 +331,7 @@ do{
 }while( ... condition ... );
 ```
 
+<!--
 ```js showLineNumbers
 for(let i = 0; i < 5; i += 1){
 

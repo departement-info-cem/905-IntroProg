@@ -145,14 +145,12 @@ do{
 
 <center>![Boucle do while](../../static/img/cours16/doWhile.png)</center>
 
-## 🪳 Débogueur (Optionnel)
+## 🐞 Débogueur
 
 <details>
     <summary>🥷 Jutsu secret 🤫</summary>
 
-    ‼️ 📢Cette section est complètement optionnelle au cours. ‼️
-
-    Parfois, il est difficile de voir ou comprendre ce qui se passe avec notre code. Un outil très intéressant est le débogueur. Il permet d'ouvrir une vue sur l'exécution de notre code et faciliter la découverte d'éventuel problème. 🔎🪳
+    Parfois, il est difficile de voir ou comprendre ce qui se passe avec notre code. Un outil très intéressant est le débogueur. Il permet d'ouvrir une vue sur l'exécution de notre code et faciliter la découverte d'éventuel problème. 🔎🐞
 
 
     On le retrouve juste à côté de l'onglet de la console de 🔥🦊FireFox. 
