@@ -338,7 +338,7 @@ for(let i = 0; i < 5; i += 1){
     // Code à exécuter plusieurs fois
     
 }
-```
+```-->
 
 ### 🎰 Tableaux
 
@@ -388,7 +388,6 @@ while(i < monTableau.length){
 
 }
 ```
--->
 
 ### 💻 DOM
 
