@@ -102,7 +102,7 @@ function nomDeLaFonction(){
 
 }
 ```
-<!--
+
 ### ⚙️🎨 Fonctions avec paramètres
 
 ```js showLineNumbers
@@ -133,7 +133,6 @@ function valeursEgales(nombre1, nombre2){
 // Ex : la variable x contiendra false
 let x = valeursEgales(2, 4);
 ```
--->
 
 ### ⚙️✅ Fonctions préexistantes
 
