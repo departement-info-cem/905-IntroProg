@@ -441,6 +441,7 @@ function nomFonction(monParametre) {
     // ...
 }
 ```
+-->
 
 💄 Manipuler les classes
 ```js
@@ -461,6 +462,7 @@ document.querySelector(".classe").nomAttribut = ""; // Retirer
 let x = document.querySelector(".classe").nomAttribut;
 ```
 
+<!--
 🎰 Obtenir un tableau d'éléments avec une classe en commun
 ```js
 let elements = document.querySelectorAll(".maClasse");
