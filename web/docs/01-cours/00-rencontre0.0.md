@@ -462,12 +462,11 @@ document.querySelector(".classe").nomAttribut = ""; // Retirer
 let x = document.querySelector(".classe").nomAttribut;
 ```
 
-<!--
 🎰 Obtenir un tableau d'éléments avec une classe en commun
 ```js
 let elements = document.querySelectorAll(".maClasse");
 ```
--->
+
 🎨 Modifier le style d’un élément
 ```js
 document.querySelector(".classe").style.propriété = "valeur";
