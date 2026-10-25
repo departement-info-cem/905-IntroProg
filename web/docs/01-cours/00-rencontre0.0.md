@@ -419,6 +419,7 @@ document.querySelector(".classeDuParent").appendChild(nouvelElement);
 ```js
 document.querySelector(".classe").remove()
 ```
+-->
 
 🎹 Créer un écouteur d'événements clavier
 ```js
@@ -433,6 +434,7 @@ function nomFonction(event){
 }
 ```
 
+<!--
 📢 Écouteurs d'événements avec paramètres
 ```js
 document.querySelector(".classe").addEventListener("type", function(){ nomFonction("mon paramètre") });
@@ -504,6 +506,7 @@ function changerCouleur(event){
 
 }
 ```
+-->
 
 ### ⏰ Planificateurs
 
@@ -519,9 +522,13 @@ setInterval(maFonction, 250); // 250 est un nombre de millisecondes
 
 🛑 Mettre fin à un planificateur à intervalles
 ```js
-let monPlanificateur = setInterval(maFonction, 250);
+function maFonction1(){
+    gPlanificateur = setInterval(maFonction, 250); // Planificateur rangé dans une variable globale 
+}
 
-clearInterval(monPlanificateur); // Ceci met fin au planificateur
+function maFonction2(){
+    clearInterval(gPlanificateur); // Ceci met fin au planificateur
+}
 ```
 
 ### 🐛 Conversion en nombres
@@ -540,4 +547,3 @@ let z = parseInt("25");
 let x = parseFloat("25.15px");
 let y = parseFloat("25.15");
 ```
--->
