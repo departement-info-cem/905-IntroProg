@@ -141,7 +141,7 @@ function toucheClavier(event){
 }
 ```
 
-⛔ Notez que l'ajout du paramètre `event` dans les parenthèses de la fonction est **obligatoire**.
+⛔ Notez que l'ajout d'un paramètre dans les parenthèses de la fonction est **obligatoire**. Son nom n'est pas obligé d'être `event` cela dit. Ça peut être `evenement`, `e`, etc. Dans ce cas, on remplacerait `event.key` par `evenement.key` ou `e.key` !
 
 Que contiendra la variable `touche` exactement ? Une **chaîne de caractères** qui varie selon la touche appuyée :
 
