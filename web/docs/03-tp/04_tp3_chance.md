@@ -2,7 +2,7 @@
 
 📦 Projet de départ : Non disponible
 
-📽 Vidéo du résultat attendu : [Link](https://youtu.be/0PI0N1tz3Mk)
+📽 Vidéo du résultat attendu : [Lien](https://youtu.be/0PI0N1tz3Mk)
 
 :::warning
 
