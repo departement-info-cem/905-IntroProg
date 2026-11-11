@@ -434,16 +434,14 @@ function nomFonction(event){
 }
 ```
 
-<!--
 📢 Écouteurs d'événements avec paramètres
 ```js
-document.querySelector(".classe").addEventListener("type", function(){ nomFonction("mon paramètre") });
+document.querySelector(".classe").addEventListener("type", function(){ nomFonction(67, "du texte") });
 
-function nomFonction(monParametre) {
+function nomFonction(param1, param2) {
     // ...
 }
 ```
--->
 
 💄 Manipuler les classes
 ```js
@@ -491,7 +489,8 @@ document.querySelector(".classe").style.propriété = "valeur";
 
 </tr>
 </table>
-<!-- ### 🦑 currentTarget
+
+### 🦑 currentTarget
 
 ```js showLineNumbers
 function init(){
@@ -506,7 +505,6 @@ function changerCouleur(event){
 
 }
 ```
--->
 
 ### ⏰ Planificateurs
 
