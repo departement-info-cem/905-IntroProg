@@ -298,7 +298,6 @@ else{
 }
 ```
 
-<!--
 ```js showLineNumbers
 switch(/* la valeur à comparer */){
     case /* première valeur possible */ : /* ... code ... */ ; break;
@@ -308,6 +307,7 @@ switch(/* la valeur à comparer */){
 }
 ```
 
+<!--
 ```js showLineNumbers
 let maVariable = condition ? valeur_si_vrai : valeur_si_faux;
 ```-->
@@ -330,14 +330,13 @@ do{
 }while( ... condition ... );
 ```
 
-<!--
 ```js showLineNumbers
 for(let i = 0; i < 5; i += 1){
 
     // Code à exécuter plusieurs fois
     
 }
-```-->
+```
 
 ### 🎰 Tableaux
 
@@ -378,12 +377,9 @@ monTableau.splice(index, nb_à_retirer);
 
 ➰ Voici un modèle de boucle pour parcourir un tableau
 ```js
-let i = 0;
-
-while(i < monTableau.length){
+for(let i = 0; i < monTableau.length; i += 1){
 
     // ... Faire quelque chose avec monTableau[i] ...
-    i += 1;
 
 }
 ```
