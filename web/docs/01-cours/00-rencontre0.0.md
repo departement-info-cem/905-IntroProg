@@ -307,10 +307,9 @@ switch(/* la valeur à comparer */){
 }
 ```
 
-<!--
 ```js showLineNumbers
 let maVariable = condition ? valeur_si_vrai : valeur_si_faux;
-```-->
+```
 
 ### ➰ Boucles
 
@@ -400,7 +399,7 @@ document.querySelector(".classe").textContent = "Nouveau texte";
 ```js
 document.querySelector(".classe").addEventListener("type", nomFonction);
 ```
-<!--
+
 🥚 Créer un nouvel élément HTML
 ```js
 let monElement = document.createElement("p"); // p car on crée un élément <p>
@@ -415,7 +414,6 @@ document.querySelector(".classeDuParent").appendChild(nouvelElement);
 ```js
 document.querySelector(".classe").remove()
 ```
--->
 
 🎹 Créer un écouteur d'événements clavier
 ```js

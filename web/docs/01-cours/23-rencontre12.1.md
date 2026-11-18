@@ -38,6 +38,24 @@ else{
 
 <center>![Conditions ternaires](../../static/img/cours23/src.png)</center>
 
+#### Exemple 3 : choisir un paramètre de fonction
+
+```js showLineNumbers
+// Le paramètre "limegreen" sera utilisé si on a gagné, et "crimson" sinon.
+messageFinJeu(gVictoire == true ? "limegreen" : "crimson");
+```
+
+Équivalent à :
+
+```js showLineNumbers
+if(gVictoire == true){
+    messageFinJeu("limegreen");
+}
+else{
+    messageFinJeu("crimson");
+}
+```
+
 ## 🥚 Création d'éléments HTML
 
 **Étape 1** : Créer l'élément
