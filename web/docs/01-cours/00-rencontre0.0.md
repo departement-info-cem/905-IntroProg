@@ -144,7 +144,6 @@ alert("Skbidi");
 console.log("Natacha n'attache pas ses chats");
 ```
 
-<!--
 ### ⚙️📝 Fonctions textuelles
 
 ```js
@@ -195,7 +194,6 @@ Math.random() * 5; // 0 à 5 ex.: 3.0958
 5 + Math.random() * 10; // 5 à 15 ex.: 8.78432
 1 + Math.floor(Math.random() * 5) // 1, 2, 3, 4, 5, 6
 ```
--->
 
 ### ⚖️ Opérateurs de comparaison
 

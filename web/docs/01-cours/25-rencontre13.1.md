@@ -30,6 +30,49 @@ On peut utiliser sa valeur pour réaliser des opérations, comme pour une **vari
 
 :::
 
+### 💡 Cas classiques
+
+#### Ranger un élément HTML dans une variable locale
+
+Lorsqu'on récupère un ou plusieurs éléments HTML à l'aide de `querySelector()` ou `querySelectorAll()`, on n'a généralement jamais à modifier la variable ensuite. C'est donc un bon exemple de **constante**.
+
+```js showLineNumbers
+const minou = document.querySelector(".chat");
+
+minou.textContent = "Miaou";
+minou.style.color = "orange";
+
+const pitous = document.querySelectorAll(".chien");
+
+for(let i = 0; i < pitous.length; i++){
+
+    pitous[i].textContent = "Ouaf";
+    pitous[i].style.color = "gold";
+
+}
+```
+
+#### Tableaux
+
+À moins qu'on souhaite pouvoir remplacer un tableau existant avec un tableau vide comme ceci ... :
+
+```js showLineNumbers
+let monTableau = [3, 6, 4, 2, 1];
+
+monTableau = []; // Remplacer le tableau par un tableau vide
+```
+
+On va généralement déclarer un tableau en **constante**. Cela n'empêche pas d'utiliser des fonctions comme `push()`, `pop()` et `splice()` car le statut de constante bloque seulement les opérateurs d'affectation comme `=`, `+=`, `-=`, etc.
+
+De plus, il reste possible de modifier des éléments du tableau. (Ex : `monTableau[1] = 3;`)
+
+```js showLineNumbers
+const monTableau = ["bleu", "rouge", "jaune"];
+
+monTableau.push("vert");
+monTableau[0] = "cyan";
+```
+
 ## ⚖ Choisir les bons blocs
 
 Nous avons vu les `if`, `else`, `else if`, `switch`, `while`, `do wfile`, `for` et les **conditions ternaires**.
