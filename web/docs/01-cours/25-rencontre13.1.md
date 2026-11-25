@@ -34,7 +34,7 @@ On peut utiliser sa valeur pour réaliser des opérations, comme pour une **vari
 
 #### Ranger un élément HTML dans une variable locale
 
-Lorsqu'on récupère un ou plusieurs éléments HTML à l'aide de `querySelector()` ou `querySelectorAll()`, on n'a généralement jamais à modifier la variable ensuite. C'est donc un bon exemple de **constante**.
+Lorsqu'on récupère un ou plusieurs éléments HTML à l'aide de `querySelector()` ou `querySelectorAll()` **dans une variable locale**, on n'a généralement jamais à modifier la variable ensuite. C'est donc un bon exemple de **constante**.
 
 ```js showLineNumbers
 const minou = document.querySelector(".chat");
