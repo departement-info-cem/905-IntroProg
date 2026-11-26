@@ -75,7 +75,7 @@ monTableau[0] = "cyan";
 
 ## ⚖ Choisir les bons blocs
 
-Nous avons vu les `if`, `else`, `else if`, `switch`, `while`, `do wfile`, `for` et les **conditions ternaires**.
+Nous avons vu les `if`, `else`, `else if`, `switch`, `while`, `do while`, `for` et les **conditions ternaires**.
 
 Certains de ces blocs sont très similaires, voir interchangeables pour quelques situations. Cela dit, dans certains cas, le choix du bloc peut devenir évident car il est plus élégant et / ou lisible.
 
